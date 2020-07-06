@@ -8,6 +8,7 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Profile from "./components/Profile";
 // import Home from "./components/Home";
 // import reducer from "./store/Reducer.js";
 
@@ -22,7 +23,8 @@ ReactDOM.render(
       {/* <Provider store={store}> */}
       <App>
         <Switch>
-          <Route component={Login} path="/" exact></Route>
+          <Route component={Login} path="/log-in" exact></Route>
+          <Route component={Profile} path="/profile" exact></Route>
           <Route component={Register} path="/register" exact></Route>
           {/* <Route component={Home} path="/home" exact></Route> */}
         </Switch>

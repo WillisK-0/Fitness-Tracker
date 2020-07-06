@@ -1,5 +1,6 @@
 import React from "react";
 import "../style/navBar.css";
+import { NavLink } from "react-router-dom";
 function NavBar() {
   return (
     <>
@@ -9,30 +10,37 @@ function NavBar() {
       <nav role="navigation" className="primary-navigation">
         <ul className="primary-menu-items">
           <li className="primary-menu-item">
-            <a href="#">Home</a>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <a href="#">Work &#x25BE;</a>
+            <NavLink to="/">Work &#x25BE;</NavLink>
             <ul className="dropdown" className="drop-menu-items">
               <li classname="drop-menu-item">
-                <a href="#">Web Development</a>
+                <NavLink className="links" to="/">
+                  Web Development
+                </NavLink>
               </li>
               <li classname="drop-menu-item">
-                <a href="#">Web Design</a>
+                <NavLink className="links" to="/">
+                  Web Design
+                </NavLink>
               </li>
+
               <li classname="drop-menu-item">
-                <a href="#">Illustration</a>
-              </li>
-              <li classname="drop-menu-item">
-                <a href="#">Iconography</a>
+                <NavLink className="links" to="/">
+                  Illustration
+                </NavLink>
               </li>
             </ul>
           </li>
           <li>
-            <a href="#">About</a>
+            <NavLink to="/">About</NavLink>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <NavLink to="/">Contact</NavLink>
+          </li>
+          <li>
+            <NavLink to="/profile">Profile</NavLink>
           </li>
         </ul>
       </nav>

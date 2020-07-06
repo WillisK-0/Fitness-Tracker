@@ -11,6 +11,17 @@ app.get("/", (req, res) => {
   res.send("hello");
 });
 
+app.get("/user-info/:id", (req, res) => {
+  let id = req.params.id;
+  db.User.findOne({
+    where: {
+      id: id,
+    },
+  }).then((user) => {
+    res.json(user);
+  });
+});
+
 // #######################################----POST ROUTES----########################################
 
 app.post("/user-login", (req, res) => {
@@ -35,16 +46,20 @@ app.post("/user-registration", (req, res) => {
   let username = req.body.username;
   let password = req.body.password;
   let gender = req.body.gender;
-  let height = req.body.height;
+  let feet = req.body.feet;
+  let inches = req.body.inches;
+  let Activity = req.body.Activity;
   let weight = req.body.weight;
   let goal = req.body.goal;
   let age = req.body.age;
   bcrypt.hash(password, 10, function (err, hashpass) {
     db.User.create({
       username: username,
+      Activity: Activity,
       password: hashpass,
       gender: gender,
-      height: height,
+      feet: feet,
+      inches: inches,
       weight: weight,
       goal: goal,
       age: age,
