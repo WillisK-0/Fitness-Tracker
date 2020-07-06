@@ -102,7 +102,7 @@ function Register(props) {
         <button id="log-in-btn" onClick={handleCreateUser}>
           SIGN UP
         </button>
-        <NavLink to="/">Login</NavLink>
+        <NavLink to="/log-in">Login</NavLink>
       </form>
     </>
   );
