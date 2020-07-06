@@ -1,17 +1,20 @@
 import React from "react";
 import logo from "./logo.svg";
+
 import NavBar from "./components/NavBar";
 import CalorieTracker from "./components/CalorieTracker";
 
 import "./App.css";
 
-function App() {
+function App(props) {
   return (
     <div>
       <NavBar />
-      <CalorieTracker />
+    {props.children}
+     
     </div>
   );
+
 }
 
 export default App;
