@@ -56,10 +56,17 @@ function Register(props) {
           <option value="female">Female</option>
         </select>
         <input
-          id="height"
-          name="height"
+          id="feet"
+          name="feet"
           onChange={handleOnChange}
-          placeholder="Height"
+          placeholder="Height(feet)"
+          type="text"
+        ></input>
+        <input
+          id="inches"
+          name="inches"
+          onChange={handleOnChange}
+          placeholder="Height(inches)"
           type="text"
         ></input>
         <input
@@ -69,6 +76,15 @@ function Register(props) {
           placeholder="Weight"
           type="text"
         ></input>
+        <select onChange={handleOnChange} name="Activity">
+          <option>Activity</option>
+          <option value="sedentary">Sedentary: Little to no exercise</option>
+          <option value="light">Light: Exercise 1-3 times per week</option>
+          <option value="moderate">
+            Moderate: Exercise 3-4 times per week
+          </option>
+          <option value="active">Active: Daily Exercise</option>
+        </select>
         <input
           id="age"
           name="age"
