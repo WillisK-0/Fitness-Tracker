@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "vfznidpr",
+    "password": "51f8zbWS1bl7OIgFkl2PUU6MO16ewchN",
+    "database": "vfznidpr",
+    "host": "ruby.db.elephantsql.com",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "vfznidpr",
+    "password": "51f8zbWS1bl7OIgFkl2PUU6MO16ewchN",
+    "database": "vfznidpr",
+    "host": "ruby.db.elephantsql.com",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  }
+}
