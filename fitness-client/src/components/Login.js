@@ -26,8 +26,11 @@ function Login(props) {
       })
       .then((result) => {
         localStorage.setItem("userid", result.id);
-        props.onAuthenticated();
+
         setUserLogin(result.login);
+        if (result.login == true) {
+          props.onAuthenticated();
+        }
       });
   };
 
