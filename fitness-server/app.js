@@ -1,73 +1,57 @@
+// const expressEdge = require("express-edge");
 const express = require("express");
 const db = require("./models");
-const app = express();
-const cors = require("cors");
-const bcrypt = require("bcryptjs");
-app.use(cors());
+const edge = require("edge.js");
+const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const fileUpload = require("express-fileupload");
+const expressSession = require('express-session');
+const connectFlash = require("connect-flash");
+const cors = require("cors");
+ 
+
+const createUserController = require("./controllers/createUser");
+const loginController = require("./controllers/login");
+const logoutController = require("./controllers/logout");
+const storePost = require('./middleware/storePost');
+const auth = require("./middleware/auth");
+const redirectIfAuthenticated = require('./middleware/redirectIfAuthenticated')
+const app = express();
+const { config, engine } = require('express-edge');
+
+// Configure Edge if need to
+config({ cache: process.env.NODE_ENV === 'production' });
+ 
+// Automatically sets view engine and adds dot notation to app.render
+app.use(engine);
+// app.set('views', `${__dirname}/views`);
+// app.use(edge());
+app.use(connectFlash());
+app.use(fileUpload());
+app.use(connectFlash());
+app.use(cors());
 app.use(bodyParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
-app.get("/", (req, res) => {
-  res.send("hello");
+ 
+app.use(expressSession({
+    secret: 'secret',
+}));
+
+app.use('*', (req, res, next) => {
+    edge.global('auth', req.session.userId)
+    next()
 });
 
-app.get("/user-info/:id", (req, res) => {
-  let id = req.params.id;
-  db.User.findOne({
-    where: {
-      id: id,
-    },
-  }).then((user) => {
-    res.json(user);
+app.post("/users/login", redirectIfAuthenticated, loginController);
+app.get("/auth/register", redirectIfAuthenticated, createUserController);
+app.get("/auth/logout", redirectIfAuthenticated, logoutController);
+
+app.listen(3001, () => {
+    console.log("App listening on port 3001");
   });
-});
 
-// #######################################----POST ROUTES----########################################
-
-app.post("/user-login", (req, res) => {
-  let username = req.body.username;
-  let password = req.body.password;
-  db.User.findOne({
-    where: { username: username },
-  }).then((user) => {
-    if (user) {
-      bcrypt.compare(password, user.password, (err, result) => {
-        if (result) {
-          res.send({ login: true, id: user.id });
-        } else {
-          res.send({ login: false });
-        }
-      });
-    }
-  });
-});
-
-app.post("/user-registration", (req, res) => {
-  let username = req.body.username;
-  let password = req.body.password;
-  let gender = req.body.gender;
-  let feet = req.body.feet;
-  let inches = req.body.inches;
-  let Activity = req.body.Activity;
-  let weight = req.body.weight;
-  let goal = req.body.goal;
-  let age = req.body.age;
-  bcrypt.hash(password, 10, function (err, hashpass) {
-    db.User.create({
-      username: username,
-      Activity: Activity,
-      password: hashpass,
-      gender: gender,
-      feet: feet,
-      inches: inches,
-      weight: weight,
-      goal: goal,
-      age: age,
-    });
-  });
-  res.send({ message: "Account Created!" });
-});
-
-app.listen(3001, (req, res) => {
-  console.log("Server is running...");
-});
+  module.exports = app;
