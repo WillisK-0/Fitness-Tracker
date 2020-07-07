@@ -1,21 +1,26 @@
 
-# :rocket: FITNESS TRACKER :alien:
+
+# :running: :fork_and_knife: FITNESS TRACKER :fork_and_knife: :running:
 
 An app designed with health and fitness in mind. Capable of tracking a users caloric intake, calories burned, ammount of calories needed, fetching healthy recipes and so much more.
 
 ## Summary
- 
- :star: - [Screenshots](#Screenshots)
- :star: - [Videos](#Videos)
- :star: - [Getting Started](#getting-started)
- :star: - [Prerequisites](#Prerequisites)
- :star: - [Installing](#Installing)
- :star: - [Built With](#Built-With)
- :star: - [I TIP MY HAT TO](#I-TIP-MY-HAT-TO)
- :star: - [License](#license)
- :star: - [Contributors](#Contributors)
 
-## Getting Started
+ - :star: [Screenshots](#screenshots)
+ - :star: [Videos](#videos)
+ - :star: [Getting Started](#getting-started)
+ - :star: [Prerequisites](#prerequisites)
+ - :star: [Installing](#installing)
+ - :star: [Built With](#built-with)
+ - :star: [I TIP MY HAT TO](#i-tip-my-hat-to)
+ - :star: [License](#license)
+ - :star: [Contributors](#contributors)
+ 
+## Screenshots
+
+## Videos
+
+## Getting-Started
 
 Feel free to fork it and tweak it to your likings. This is a basic quick build with many paths that are open to your exploration. Otherwise to try it out clone the repo to your local machine or download the zip.             
 
