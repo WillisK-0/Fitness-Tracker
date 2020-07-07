@@ -37,6 +37,11 @@ function NavBar(props) {
           <li>
             <NavLink to="/">About</NavLink>
           </li>
+          {props.isAuthenticated == false ? (
+            <li>
+              <NavLink to="/log-in">Login</NavLink>
+            </li>
+          ) : null}
           <li>
             <NavLink to="/">Contact</NavLink>
           </li>
