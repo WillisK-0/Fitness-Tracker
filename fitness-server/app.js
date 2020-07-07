@@ -22,7 +22,51 @@ app.get("/user-info/:id", (req, res) => {
   });
 });
 
+app.get("/food-items/:id", (req, res) => {
+  let id = req.params.id;
+  db.UserFoods.findAll({
+    where: {
+      userid: id,
+    },
+  }).then((result) => {
+    res.json(result);
+  });
+});
+
 // #######################################----POST ROUTES----########################################
+
+app.post("/update/:id", (req, res) => {
+  let id = req.params.id;
+  let username = req.body.username;
+  let password = req.body.password;
+  let weight = req.body.weight;
+  let Activity = req.body.Activity;
+  let age = req.body.age;
+  let goal = req.body.goal;
+  let feet = req.body.feet;
+  let inches = req.body.inches;
+  bcrypt.hash(password, 10, function (err, hashpass) {
+    db.User.update(
+      {
+        username: username,
+        Activity: Activity,
+        password: hashpass,
+        weight: weight,
+        age: age,
+        goal: goal,
+        feet: feet,
+        inches: inches,
+      },
+      {
+        where: {
+          id: id,
+        },
+      }
+    ).then(() => {
+      res.send({ message: "Profile Updated Successfully" });
+    });
+  });
+});
 
 app.post("/user-login", (req, res) => {
   let username = req.body.username;
@@ -42,6 +86,18 @@ app.post("/user-login", (req, res) => {
   });
 });
 
+app.post("/add-food/:id", (req, res) => {
+  let food = req.body.food;
+  let calories = req.body.calories;
+  let id = req.params.id;
+  db.UserFoods.create({
+    food: food,
+    calories: calories,
+    userid: id,
+  });
+  res.send({ message: "Food Added" });
+});
+
 app.post("/user-registration", (req, res) => {
   let username = req.body.username;
   let password = req.body.password;
@@ -52,6 +108,7 @@ app.post("/user-registration", (req, res) => {
   let weight = req.body.weight;
   let goal = req.body.goal;
   let age = req.body.age;
+
   bcrypt.hash(password, 10, function (err, hashpass) {
     db.User.create({
       username: username,
