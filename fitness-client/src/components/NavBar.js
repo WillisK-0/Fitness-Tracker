@@ -1,4 +1,6 @@
 import React from "react";
+import { NavLink, Redirect } from "react-router-dom";
+
 import "../style/navBar.css";
 function NavBar() {
   return (
@@ -9,7 +11,7 @@ function NavBar() {
       <nav role="navigation" className="primary-navigation">
         <ul className="primary-menu-items">
           <li className="primary-menu-item">
-            <a href="#">Home</a>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
             <a href="#">Work &#x25BE;</a>
@@ -32,7 +34,7 @@ function NavBar() {
             <a href="#">About</a>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <NavLink to="/log-in">Sign In</NavLink>
           </li>
         </ul>
       </nav>
