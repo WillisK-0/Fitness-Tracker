@@ -1,6 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-
+import { NavLink, Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { connect } from "react-redux";
 function Profile(props) {
   const [userInfo, setUserInfo] = useState([]);
   const [overview, setOverview] = useState(null);
@@ -101,10 +103,18 @@ function Profile(props) {
       });
   }, []);
 
+  const handleSignOut = () => {
+    props.isAuthenticated();
+  };
+
   return (
     <>
       <h1>Welcome {userInfo.username}</h1>
       <button onClick={handleOverview}>Overview</button>
+      <NavLink to="/log-in">
+        <button onClick={handleSignOut}>Sign Out</button>
+      </NavLink>
+      <button>Update Profile</button>
       {overview !== null ? (
         <div className="userOverview">
           <h1>
@@ -119,4 +129,10 @@ function Profile(props) {
   );
 }
 
-export default Profile;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    isAuthenticated: () => dispatch({ type: "NOTAUTH", value: false }),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Profile);

@@ -1,7 +1,8 @@
 import React from "react";
 import "../style/navBar.css";
 import { NavLink } from "react-router-dom";
-function NavBar() {
+import { connect } from "react-redux";
+function NavBar(props) {
   return (
     <>
       <div className="header">
@@ -39,13 +40,21 @@ function NavBar() {
           <li>
             <NavLink to="/">Contact</NavLink>
           </li>
-          <li>
-            <NavLink to="/profile">Profile</NavLink>
-          </li>
+          {props.isAuthenticated == true ? (
+            <li>
+              <NavLink to="/profile">Profile</NavLink>
+            </li>
+          ) : null}
         </ul>
       </nav>
     </>
   );
 }
 
-export default NavBar;
+const mapStateToProps = (state) => {
+  return {
+    isAuthenticated: state.isAuthenticated,
+  };
+};
+
+export default connect(mapStateToProps)(NavBar);
