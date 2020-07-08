@@ -63,7 +63,7 @@ function Login(props) {
         <NavLink id="sign-up" to="/register">
           Sign Up Here
         </NavLink>
-        {userLogin !== null && userLogin == true ? <Redirect to="/Profile" /> : null}
+        {userLogin !== null && userLogin == true ? <Redirect to="/" /> : null}
         {userLogin !== null && userLogin == false ? (
           <h1 id="incorrect">Login Incorrect</h1>
         ) : null}
