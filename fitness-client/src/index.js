@@ -11,6 +11,7 @@ import Register from "./components/Register";
 import Profile from "./components/Profile";
 // import Home from "./components/Home";
 import reducer from "./store/Reducer.js";
+import Update from "./components/Update";
 
 const store = createStore(
   reducer,
@@ -26,6 +27,7 @@ ReactDOM.render(
             <Route component={Login} path="/log-in" exact></Route>
             <Route component={Profile} path="/profile" exact></Route>
             <Route component={Register} path="/register" exact></Route>
+            <Route component={Update} path="/update" exact></Route>
             {/* <Route component={Home} path="/home" exact></Route> */}
           </Switch>
         </App>

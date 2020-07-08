@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 
-const RecipeContext = React.createContext()
+const RecipeContext = React.createContext();
+const app_id = `42e1ae5f`;
+const apiKey = `86b213cc8f1e55dc3ff546ec02e96ef1`;
 let api = `https://cors-anywhere.herokuapp.com/http://api.edamam.com/search?q=chicken&app_id=${app_id}}&app_key=${apiKey}&from=0&to=3&calories=591-722&health=alcohol-free`
-const app_id = `42e1ae5f`
-const apiKey = `86b213cc8f1e55dc3ff546ec02e96ef1`
+
 
 // var xhr = new XMLHttpRequest();
 // xhr.open('GET', 'http://example.com/', true);
