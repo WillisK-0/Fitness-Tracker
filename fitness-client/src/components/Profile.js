@@ -10,6 +10,94 @@ function Profile(props) {
   const [foodItems, setFoodItems] = useState([]);
 
   const handleOverview = () => {
+    if (userInfo.gender == "female") {
+      let sedValue = 1.2;
+      if (userInfo.Activity == "sedentary") {
+        let convertedHeight =
+          parseInt(userInfo.feet) * 12 + parseInt(userInfo.inches);
+        let centimeters = convertedHeight * 2.54;
+        let convertedWeight = userInfo.weight * 0.453592;
+        let womenCals =
+          655 + 9.6 * convertedWeight + 1.8 * centimeters - 4.7 * userInfo.age;
+        let calories = Math.trunc(womenCals);
+        let newsedValue = calories * sedValue;
+        let finalValue = Math.trunc(newsedValue);
+        let mwl = Math.trunc(finalValue * 0.86);
+        let wl = Math.trunc(finalValue * 0.73);
+        let el = Math.trunc(finalValue * 0.46);
+        setOverview({
+          goal: userInfo.goal,
+          bmr: finalValue,
+          mwl: mwl,
+          wl: wl,
+          el: el,
+        });
+      } else if (userInfo.Activity == "light") {
+        let sedValue = 1.375;
+        let convertedHeight =
+          parseInt(userInfo.feet) * 12 + parseInt(userInfo.inches);
+        let centimeters = convertedHeight * 2.54;
+        let convertedWeight = userInfo.weight * 0.453592;
+        let womenCals =
+          655 + 9.6 * convertedWeight + 1.8 * centimeters - 4.7 * userInfo.age;
+        let calories = Math.trunc(womenCals);
+        let newsedValue = calories * sedValue;
+        let finalValue = Math.trunc(newsedValue);
+        let mwl = Math.trunc(finalValue * 0.9);
+        let wl = Math.trunc(finalValue * 0.79);
+        let el = Math.trunc(finalValue * 0.58);
+        setOverview({
+          goal: userInfo.goal,
+          bmr: finalValue,
+          mwl: mwl,
+          wl: wl,
+          el: el,
+        });
+      } else if (userInfo.Activity == "moderate") {
+        let sedValue = 1.55;
+        let convertedHeight =
+          parseInt(userInfo.feet) * 12 + parseInt(userInfo.inches);
+        let centimeters = convertedHeight * 2.54;
+        let convertedWeight = userInfo.weight * 0.453592;
+        let womenCals =
+          655 + 9.6 * convertedWeight + 1.8 * centimeters - 4.7 * userInfo.age;
+        let calories = Math.trunc(womenCals);
+        let newsedValue = calories * sedValue;
+        let finalValue = Math.trunc(newsedValue);
+        let mwl = Math.trunc(finalValue * 0.9);
+        let wl = Math.trunc(finalValue * 0.79);
+        let el = Math.trunc(finalValue * 0.58);
+        setOverview({
+          goal: userInfo.goal,
+          bmr: finalValue,
+          mwl: mwl,
+          wl: wl,
+          el: el,
+        });
+      } else if (userInfo.Activity == "active") {
+        let sedValue = 1.7;
+        let convertedHeight =
+          parseInt(userInfo.feet) * 12 + parseInt(userInfo.inches);
+        let centimeters = convertedHeight * 2.54;
+        let convertedWeight = userInfo.weight * 0.453592;
+        let womenCals =
+          655 + 9.6 * convertedWeight + 1.8 * centimeters - 4.7 * userInfo.age;
+        let calories = Math.trunc(womenCals);
+        let newsedValue = calories * sedValue;
+        let finalValue = Math.trunc(newsedValue);
+        let mwl = Math.trunc(finalValue * 0.9);
+        let wl = Math.trunc(finalValue * 0.79);
+        let el = Math.trunc(finalValue * 0.58);
+        setOverview({
+          goal: userInfo.goal,
+          bmr: finalValue,
+          mwl: mwl,
+          wl: wl,
+          el: el,
+        });
+      }
+    }
+
     if (userInfo.gender == "male") {
       if (userInfo.Activity == "sedentary") {
         let sedValue = 1.2;
@@ -96,8 +184,6 @@ function Profile(props) {
           el: el,
         });
       }
-    } else {
-      alert("havent configured women yet");
     }
   };
 
