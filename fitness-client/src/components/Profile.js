@@ -130,6 +130,8 @@ function Profile(props) {
       getUserInfo();
     } else if (userInfo.goal == "maintain weight") {
       props.dailyLimit(overview.bmr);
+    } else if (userInfo.goal == "gain weight") {
+      props.dailyLimit(overview.bmr);
     } else if (userInfo.goal == "lose weight") {
       props.dailyLimit(overview.mwl);
     } else {
@@ -138,7 +140,7 @@ function Profile(props) {
   }, [overview]);
 
   const handleSignOut = () => {
-    props.isAuthenticated();
+    props.isNotAuthenticated();
   };
 
   const handleAddFood = () => {
@@ -158,8 +160,29 @@ function Profile(props) {
       });
   };
 
+  const handleRemoveFoodItem = (id) => {
+    fetch("http://localhost:3001/remove-food-item/" + id, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ delete: "deleted" }),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((result) => {
+        alert(result.message);
+        getFoodItems();
+      });
+  };
+
   const handleSubCal = (calories) => {
-    props.subCal(calories);
+    if (props.dailyLimitx <= 0) {
+      alert("You have reached your daily limit");
+    } else {
+      props.subCal(calories);
+    }
   };
 
   return (
@@ -174,16 +197,7 @@ function Profile(props) {
       </NavLink>
       {overview !== null ? (
         <div className="userOverview">
-          <h1>
-            Your Goal is to {userInfo.goal}(update profile to change this)
-          </h1>
-          <h2>
-            Your BMR is ({overview.bmr}) cals/day to maintain current weight
-          </h2>
-          <p>Anything over your BMR can be used to gain weight</p>
-          <h2>Mild weight loss will be {overview.mwl} cals/day</h2>
-          <h2>Moderate Weight loss will be {overview.wl} cals/day</h2>
-          <h2>Extreme weight loss will be {overview.el}cals/day</h2>
+          <h1>Your Goal is to {userInfo.goal}</h1>
           {userInfo.goal == "maintain weight" ? (
             <h2>You have ({props.dailyLimitx})cals left for the day</h2>
           ) : userInfo.goal == "lose weight" ? (
@@ -193,6 +207,13 @@ function Profile(props) {
               You have anything over ({props.dailyLimitx})cals left for the day
             </h2>
           )}
+          <p>
+            Your BMR is ({overview.bmr}) cals/day to maintain current weight
+          </p>
+          <p>Anything over your BMR can be used to gain weight</p>
+          <p>Mild weight loss will be {overview.mwl} cals/day</p>
+          <p>Moderate Weight loss will be {overview.wl} cals/day</p>
+          <p>Extreme weight loss will be {overview.el}cals/day</p>
         </div>
       ) : null}
       <div>
@@ -220,6 +241,9 @@ function Profile(props) {
               <button onClick={() => handleSubCal(foodItem.calories)}>
                 I Ate This
               </button>
+              <button onClick={() => handleRemoveFoodItem(foodItem.id)}>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+              </button>
             </li>
           );
         })}
@@ -230,7 +254,7 @@ function Profile(props) {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    isAuthenticated: () => dispatch({ type: "NOTAUTH", value: false }),
+    isNotAuthenticated: () => dispatch({ type: "NOTAUTH", value: false }),
     overview: (overview) => dispatch({ type: "UPDOV", value: overview }),
     dailyLimit: (limit) => dispatch({ type: "LMT", value: limit }),
     subCal: (calories) => dispatch({ type: "SUBCAL", value: -calories }),

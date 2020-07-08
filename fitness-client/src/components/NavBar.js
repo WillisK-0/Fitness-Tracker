@@ -14,22 +14,16 @@ function NavBar(props) {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/">Work &#x25BE;</NavLink>
+            <NavLink to="/">More &#x25BE;</NavLink>
             <ul className="dropdown" className="drop-menu-items">
               <li classname="drop-menu-item">
                 <NavLink className="links" to="/">
-                  Web Development
+                  Healthy Foods
                 </NavLink>
               </li>
               <li classname="drop-menu-item">
                 <NavLink className="links" to="/">
-                  Web Design
-                </NavLink>
-              </li>
-
-              <li classname="drop-menu-item">
-                <NavLink className="links" to="/">
-                  Illustration
+                  Exercises
                 </NavLink>
               </li>
             </ul>
