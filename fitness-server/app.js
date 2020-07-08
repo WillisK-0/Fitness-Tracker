@@ -125,6 +125,18 @@ app.post("/user-registration", (req, res) => {
   res.send({ message: "Account Created!" });
 });
 
+app.post("/remove-food-item/:id", (req, res) => {
+  let id = req.params.id;
+
+  db.UserFoods.destroy({
+    where: {
+      id: id,
+    },
+  }).then(() => {
+    res.send({ message: "Food Removed" });
+  });
+});
+
 app.listen(3001, (req, res) => {
   console.log("Server is running...");
 });
