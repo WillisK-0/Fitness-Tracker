@@ -351,6 +351,7 @@ const mapStateToProps = (state) => {
   return {
     overview: state.overview,
     dailyLimitx: state.dailyLimit,
+    isAuthenticated: state.isAuthenticated,
   };
 };
 
