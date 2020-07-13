@@ -1,6 +1,7 @@
 import React from "react";
+import { NavLink, Redirect } from "react-router-dom";
+
 import "../style/navBar.css";
-import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 function NavBar(props) {
   return (
@@ -16,12 +17,12 @@ function NavBar(props) {
           <li>
             <NavLink to="/">More &#x25BE;</NavLink>
             <ul className="dropdown" className="drop-menu-items">
-              <li classname="drop-menu-item">
+              <li className="drop-menu-item">
                 <NavLink className="links" to="/">
                   Healthy Foods
                 </NavLink>
               </li>
-              <li classname="drop-menu-item">
+              <li className="drop-menu-item">
                 <NavLink className="links" to="/">
                   Exercises
                 </NavLink>

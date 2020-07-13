@@ -37,7 +37,7 @@ function Register(props) {
           onChange={handleOnChange}
           placeholder="Username"
           type="text"
-          minlength="6"
+          minLength="6"
           required
         ></input>
 
@@ -47,7 +47,7 @@ function Register(props) {
           onChange={handleOnChange}
           placeholder="Password"
           type="password"
-          minlength="6"
+          minLength="6"
           required
         ></input>
         <select onChange={handleOnChange} name="gender" required>

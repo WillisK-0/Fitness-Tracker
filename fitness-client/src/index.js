@@ -13,6 +13,7 @@ import Profile from "./components/Profile";
 import reducer from "./store/Reducer.js";
 import Update from "./components/Update";
 import Recipe from "./components/Recipe";
+import RecipeSearch from "./components/RecipeSearch";
 
 const store = createStore(
   reducer,
@@ -29,6 +30,7 @@ ReactDOM.render(
             <Route component={Profile} path="/profile" exact></Route>
             <Route component={Register} path="/register" exact></Route>
             <Route component={Update} path="/update" exact></Route>
+            <Route component={RecipeSearch} path="/search" exact></Route>
 
             {/* <Route component={Home} path="/home" exact></Route> */}
           </Switch>
