@@ -8,10 +8,10 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Profile from "./components/Profile";
 import Home from "./components/Home";
-import CalorieTracker from "./components/CalorieTracker";
 // import reducer from "./store/Reducer.js";
-
+import CalorieTracker from "./components/CalorieTracker";
 // const store = createStore(
 //   reducer,
 //   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -24,6 +24,7 @@ ReactDOM.render(
       <App>
         <Switch>
           <Route component={Login} path="/log-in" exact></Route>
+          <Route component={Profile} path="/profile" exact></Route>
           <Route component={Register} path="/register" exact></Route>
           <Route component={Home} path="/" exact></Route>
           <Route component={CalorieTracker} path="/tracker" exact></Route>
