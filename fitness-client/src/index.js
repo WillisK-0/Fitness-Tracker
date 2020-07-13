@@ -9,28 +9,33 @@ import { Provider } from "react-redux";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Profile from "./components/Profile";
-import Home from "./components/Home";
-// import reducer from "./store/Reducer.js";
-import CalorieTracker from "./components/CalorieTracker";
-// const store = createStore(
-//   reducer,
-//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-// );
+// import Home from "./components/Home";
+import reducer from "./store/Reducer.js";
+import Update from "./components/Update";
+import Recipe from "./components/Recipe";
+import RecipeSearch from "./components/RecipeSearch";
+
+const store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      {/* <Provider store={store}> */}
-      <App>
-        <Switch>
-          <Route component={Login} path="/log-in" exact></Route>
-          <Route component={Profile} path="/profile" exact></Route>
-          <Route component={Register} path="/register" exact></Route>
-          <Route component={Home} path="/" exact></Route>
-          <Route component={CalorieTracker} path="/tracker" exact></Route>
-        </Switch>
-      </App>
-      {/* </Provider> */}
+      <Provider store={store}>
+        <App>
+          <Switch>
+            <Route component={Login} path="/log-in" exact></Route>
+            <Route component={Profile} path="/profile" exact></Route>
+            <Route component={Register} path="/register" exact></Route>
+            <Route component={Update} path="/update" exact></Route>
+            <Route component={RecipeSearch} path="/search" exact></Route>
+
+            {/* <Route component={Home} path="/home" exact></Route> */}
+          </Switch>
+        </App>
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
