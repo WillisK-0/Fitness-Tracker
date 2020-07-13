@@ -1,7 +1,8 @@
 import React from "react";
 import "../style/navBar.css";
 import { NavLink } from "react-router-dom";
-function NavBar() {
+import { connect } from "react-redux";
+function NavBar(props) {
   return (
     <>
       <div className="header">
@@ -13,22 +14,16 @@ function NavBar() {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/">Work &#x25BE;</NavLink>
+            <NavLink to="/">More &#x25BE;</NavLink>
             <ul className="dropdown" className="drop-menu-items">
               <li classname="drop-menu-item">
                 <NavLink className="links" to="/">
-                  Web Development
+                  Healthy Foods
                 </NavLink>
               </li>
               <li classname="drop-menu-item">
                 <NavLink className="links" to="/">
-                  Web Design
-                </NavLink>
-              </li>
-
-              <li classname="drop-menu-item">
-                <NavLink className="links" to="/">
-                  Illustration
+                  Exercises
                 </NavLink>
               </li>
             </ul>
@@ -36,16 +31,29 @@ function NavBar() {
           <li>
             <NavLink to="/">About</NavLink>
           </li>
+          {props.isAuthenticated == false ? (
+            <li>
+              <NavLink to="/log-in">Login</NavLink>
+            </li>
+          ) : null}
           <li>
             <NavLink to="/">Contact</NavLink>
           </li>
-          <li>
-            <NavLink to="/profile">Profile</NavLink>
-          </li>
+          {props.isAuthenticated == true ? (
+            <li>
+              <NavLink to="/profile">Profile</NavLink>
+            </li>
+          ) : null}
         </ul>
       </nav>
     </>
   );
 }
 
-export default NavBar;
+const mapStateToProps = (state) => {
+  return {
+    isAuthenticated: state.isAuthenticated,
+  };
+};
+
+export default connect(mapStateToProps)(NavBar);

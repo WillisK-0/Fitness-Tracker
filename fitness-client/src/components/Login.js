@@ -26,7 +26,11 @@ function Login(props) {
       })
       .then((result) => {
         localStorage.setItem("userid", result.id);
+
         setUserLogin(result.login);
+        if (result.login == true) {
+          props.onAuthenticated();
+        }
       });
   };
 
@@ -68,4 +72,10 @@ function Login(props) {
   );
 }
 
-export default Login;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onAuthenticated: () => dispatch({ type: "AUTH", value: true }),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Login);
