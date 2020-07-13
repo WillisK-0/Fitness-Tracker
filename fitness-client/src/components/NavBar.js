@@ -18,7 +18,7 @@ function NavBar(props) {
             <NavLink to="/">More &#x25BE;</NavLink>
             <ul className="dropdown" className="drop-menu-items">
               <li className="drop-menu-item">
-                <NavLink className="links" to="/">
+                <NavLink className="links" to="/search">
                   Healthy Foods
                 </NavLink>
               </li>
