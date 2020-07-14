@@ -16,6 +16,7 @@ import Recipe from "./components/Recipe";
 import RecipeSearch from "./components/RecipeSearch";
 import RecipeSearchResults from "./components/RecipeSearchResults";
 import RecipeSearchResultsDetails from "./components/RecipeSearchResultsDetails";
+import "./assets/scss/style.scss";
 
 const store = createStore(
   reducer,
