@@ -33,9 +33,34 @@ app.get("/food-items/:id", (req, res) => {
   });
 });
 
+<<<<<<< HEAD
+app.get("/exercise-items/:id", (req, res) => {
+  let id = req.params.id;
+  let today = new Date();
+  let dd = String(today.getDate()).padStart(2, "0");
+  let mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+  let yyyy = today.getFullYear();
+
+  today = mm + "/" + dd + "/" + yyyy;
+  db.Exercise.findAll({
+    where: {
+      userid: id,
+      date: today,
+    },
+  }).then((result) => {
+    res.json(result);
+  });
+});
+
+app.get("/exercise-items-filter/:id", (req, res) => {
+  let id = req.params.id;
+
+  db.Exercise.findAll({
+=======
 app.get("/recipes/:id", (req, res) => {
   let id = req.params.id;
   db.Recipes.findAll({
+>>>>>>> master
     where: {
       userid: id,
     },
@@ -118,6 +143,24 @@ app.post("/add-food/:id", (req, res) => {
     userid: id,
   });
   res.send({ message: "Food Added" });
+});
+
+app.post("/add-exercise/:id", (req, res) => {
+  let id = req.params.id;
+  let sets = req.body.exercise.sets;
+  let exercise = req.body.exercise.exercise;
+  let weight = req.body.exercise.weight;
+  let date = req.body.date;
+
+  db.Exercise.create({
+    sets: sets,
+    exercise: exercise,
+    weight: weight,
+    userid: id,
+    date: date,
+  });
+
+  res.send({ message: "Exercise Added" });
 });
 
 app.post("/user-registration", (req, res) => {
