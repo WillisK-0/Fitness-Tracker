@@ -5,6 +5,8 @@ import { useLocation, Switch } from "react-router-dom";
 import AppRoute from "./utils/AppRoute";
 import ScrollReveal from "./utils/ScrollReveal";
 import ReactGA from "react-ga";
+import { NeuButton } from 'neumorphic-ui';
+
 
 // Layouts
 import LayoutDefault from "./layouts/LayoutDefault";
@@ -38,7 +40,7 @@ function App(props) {
         ref={childRef}
         children={() => (
           <Switch>
-            <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
+            <AppRoute exact path="/" component={ NeuButton, Home } layout={LayoutDefault} />
           </Switch>
         )}
       />

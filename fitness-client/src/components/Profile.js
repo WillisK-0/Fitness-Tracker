@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { NavLink, Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
+
 function Profile(props) {
   const [userInfo, setUserInfo] = useState([]);
   const [overview, setOverview] = useState(null);

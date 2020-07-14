@@ -11,26 +11,26 @@ function NavBar(props) {
       </div>
       <nav role="navigation" className="primary-navigation">
         <ul className="primary-menu-items">
-          <li className="primary-menu-item">
+          <li class="input" className="primary-menu-item">
             <NavLink to="/">Home</NavLink>
           </li>
-          <li>
+          <li class="input">
             <NavLink to="/search">Recipes</NavLink>
           </li>
 
-          <li>
+          <li class="input">
             <NavLink to="/">About</NavLink>
           </li>
           {props.isAuthenticated == false ? (
-            <li>
+            <li class="input">
               <NavLink to="/log-in">Login</NavLink>
             </li>
           ) : null}
-          <li>
+          <li class="input">
             <NavLink to="/">Exercise</NavLink>
           </li>
           {props.isAuthenticated == true ? (
-            <li>
+            <li class="input">
               <NavLink to="/profile">Profile</NavLink>
             </li>
           ) : null}
