@@ -58,10 +58,7 @@ const Testimonial = ({
               <div className="tiles-item-inner">
                 <div className="testimonial-item-content">
                   <p className="text-sm mb-0">
-                    — Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum cillum dolore eu fugiat.
+                    — WOW. Top notch app from some top notch developers. This is what I imagine it looks like when a unicorn leaves behind waste product. Absolutley stunning UI, full immersive content, and DETAIL!
                   </p>
                 </div>
                 <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
@@ -70,7 +67,7 @@ const Testimonial = ({
                   </span>
                   <span className="text-color-low"> / </span>
                   <span className="testimonial-item-link">
-                    <a href="#0">AppName</a>
+                    <a href="#0">RedHat enterprise</a>
                   </span>
                 </div>
               </div>
@@ -80,10 +77,7 @@ const Testimonial = ({
               <div className="tiles-item-inner">
                 <div className="testimonial-item-content">
                   <p className="text-sm mb-0">
-                    — Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum cillum dolore eu fugiat.
+                    — BRAVO BRAVO BRAVO. An open source app tailored to the user...what a concept! It took JR Developers to realize the USER COMES FIRST. A+++
                   </p>
                 </div>
                 <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
@@ -92,7 +86,7 @@ const Testimonial = ({
                   </span>
                   <span className="text-color-low"> / </span>
                   <span className="testimonial-item-link">
-                    <a href="#0">AppName</a>
+                    <a href="#0">KLWP on Android</a>
                   </span>
                 </div>
               </div>
@@ -105,10 +99,7 @@ const Testimonial = ({
               <div className="tiles-item-inner">
                 <div className="testimonial-item-content">
                   <p className="text-sm mb-0">
-                    — Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum cillum dolore eu fugiat.
+                    — An app for the Underrepresnted and an app for the over-represented...what a concept! Pure Brilliance. I love the lack of user discrimination with this app. The math is done for you no matter WHO WHAT OR where you are. No more soggy notepads!
                   </p>
                 </div>
                 <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
@@ -117,7 +108,7 @@ const Testimonial = ({
                   </span>
                   <span className="text-color-low"> / </span>
                   <span className="testimonial-item-link">
-                    <a href="#0">AppName</a>
+                    <a href="#0">OpenSurveys</a>
                   </span>
                 </div>
               </div>

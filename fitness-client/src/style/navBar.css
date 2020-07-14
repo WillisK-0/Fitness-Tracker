@@ -31,28 +31,47 @@ ul primary-menu-items {
   font-size: 16px;
 }
 .primary-navigation ul li {
-  width: 110px;
-height: 30px;
+  width: 159px;
+height: 50px;
 /* margin: px; */
 font-size: 16px;
 border-radius: 80px;
 border-style: none;
 color: white;
 font-weight: 400;
-background: #10131F;
-box-shadow: 13px 13px 20px #0a0a12,
--13px -13px 20px #1D1D29;
+margin-bottom: 30px;
+border-radius: 25px;
+box-shadow: inset 8px 8px 8px #0a0a12,
+            inset -4px -4px 18px #1D1D29;
+            transition: 0.5s;
+            border: none;
+            outline: none;
+            background: none;
+            font-size: 18px;
+            color: #555;
+            padding: 20px 10px 20px 5px;
             
   list-style: none;
   margin:  16px;
   border-left: 2px solid #3ca0e7;
   display: inline-block;
-  padding: 0 30px;
+  padding: 10px;
   position: relative;
-  text-decoration: none;
+  font-weight: 600;
+  text-decoration: wavy;
   text-align: center;
+  justify-content: center;
   font-family: sans-serif;
 }
+
+.primary-navigation:hover ul li {
+    background: #191826;
+}
+
+.primary-navigation:hover ul li {
+    background: #191826;
+}
+
 
 .primary-navigation li a {
   color: white;
