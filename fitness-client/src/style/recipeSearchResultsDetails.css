@@ -1,0 +1,32 @@
+.content-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border: 5px #3ca0e7 solid;
+  border-radius: 10px;
+}
+
+.content-wrapper h2 {
+  text-align: center;
+  font-size: 50px;
+}
+
+.content-wrapper img {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  padding-bottom: 9px;
+}
+
+.content-wrapper h4 {
+  padding-left: 20px;
+  font-size: 35px;
+}
+
+.nutrients-item {
+  text-align: center;
+}
+
+.ingredients-item {
+  text-align: center;
+}

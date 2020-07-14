@@ -1,0 +1,30 @@
+.results-wrapper {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.food-card {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.food-card img {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+ul li {
+  list-style: none;
+  cursor: pointer;
+}
+
+#food-image:hover {
+  cursor: pointer;
+}
+
+.food-card figcaption {
+  font-size: 20px;
+}
