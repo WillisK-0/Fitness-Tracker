@@ -15,20 +15,9 @@ function NavBar(props) {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/">More &#x25BE;</NavLink>
-            <ul className="dropdown" className="drop-menu-items">
-              <li className="drop-menu-item">
-                <NavLink className="links" to="/search">
-                  Healthy Foods
-                </NavLink>
-              </li>
-              <li className="drop-menu-item">
-                <NavLink className="links" to="/">
-                  Exercises
-                </NavLink>
-              </li>
-            </ul>
+            <NavLink to="/search">Recipes</NavLink>
           </li>
+
           <li>
             <NavLink to="/">About</NavLink>
           </li>
@@ -38,7 +27,7 @@ function NavBar(props) {
             </li>
           ) : null}
           <li>
-            <NavLink to="/">Contact</NavLink>
+            <NavLink to="/">Exercise</NavLink>
           </li>
           {props.isAuthenticated == true ? (
             <li>
