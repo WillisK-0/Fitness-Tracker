@@ -54,6 +54,7 @@ box-shadow: inset 8px 8px 8px #0a0a12,
   list-style: none;
   margin:  16px;
   border-left: 2px solid #3ca0e7;
+  border-right: 2px solid #3ca0e7;
   display: inline-block;
   padding: 10px;
   position: relative;
@@ -119,6 +120,7 @@ ul li ul:hover {
 .primary-navigation ul li ul li a:hover {
   padding-left: 10px;
   border-left: 2px solid #3ca0e7;
+  border-right: 2px solid #3ca0e7;
   transition: all 0.3s ease;
 }
 

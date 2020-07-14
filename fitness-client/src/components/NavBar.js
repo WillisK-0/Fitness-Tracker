@@ -17,7 +17,10 @@ function NavBar(props) {
           <li class="input">
             <NavLink to="/search">Recipes</NavLink>
           </li>
+<<<<<<< HEAD
 
+=======
+>>>>>>> contact
           <li class="input">
             <NavLink to="/">About</NavLink>
           </li>
