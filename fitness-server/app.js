@@ -33,6 +33,7 @@ app.get("/food-items/:id", (req, res) => {
   });
 });
 
+<<<<<<< HEAD
 app.get("/exercise-items/:id", (req, res) => {
   let id = req.params.id;
   let today = new Date();
@@ -55,6 +56,11 @@ app.get("/exercise-items-filter/:id", (req, res) => {
   let id = req.params.id;
 
   db.Exercise.findAll({
+=======
+app.get("/recipes/:id", (req, res) => {
+  let id = req.params.id;
+  db.Recipes.findAll({
+>>>>>>> master
     where: {
       userid: id,
     },
@@ -96,6 +102,17 @@ app.post("/update/:id", (req, res) => {
       res.send({ message: "Profile Updated Successfully" });
     });
   });
+});
+
+app.post("/add-recipe/:id", (req, res) => {
+  let id = req.params.id;
+  let dish = req.body.dish;
+
+  db.Recipes.create({
+    dish: dish,
+    userid: id,
+  });
+  res.send({ message: "Recipe Added" });
 });
 
 app.post("/user-login", (req, res) => {
