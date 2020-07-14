@@ -17,7 +17,6 @@ function NavBar(props) {
           <li class="input">
             <NavLink to="/search">Recipes</NavLink>
           </li>
-
           <li class="input">
             <NavLink to="/">About</NavLink>
           </li>
