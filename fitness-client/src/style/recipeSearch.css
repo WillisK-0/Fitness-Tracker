@@ -1,144 +1,33 @@
-/*Prevent overscrolling of web page */
-/*https://stackoverflow.com/questions/12046315/prevent-overscrolling-of-web-page*/
-html {
-  overflow: hidden;
-  height: 100%;
+.calorie-tracker-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 5%;
+  text-align: center;
+  border: 5px #3ca0e7 solid;
+  border-radius: 10px;
 }
 
-body {
-  height: 100%;
-  overflow: auto;
+.calorie-tracker-wrapper h2 {
+  margin: 0;
+  padding-bottom: 20px;
+  padding: 15px;
 }
 
-/* Add border to recipe images*/
-.recipe-image {
-  border: 1px solid #264653;
+.calorie-tracker-wrapper input {
+  margin-bottom: 40px;
 }
 
-/*background image for landing page*/
-.bg {
-  background-image: url("../components/images/login-bg.png");
-}
-
-/*Lobster Font for headers*/
-.start-screen-font {
-  font-family: "Lobster", cursive;
-}
-
-/*styling for start screen*/
-#start-screen {
-  background-color: white;
-  opacity: 0.8;
-  height: 500px;
-  margin-left: none;
-  margin-right: none;
-  padding: 20px 15px 0 15px;
-}
-
-/*styling for login textbox on start screen*/
-#open-login-btn {
-  display: flex;
-  justify-content: center;
-  margin-left: 100px;
-  margin-right: 100px;
-}
-
-/*Log in form validation styling*/
-#error {
-  color: red;
-  font-weight: bold;
-}
-
-#logout-btn {
-  margin-top: 12px;
-}
-
-/* pencil and trash icons styling */
-.fa-pencil {
-  margin-left: 10px;
-}
-
-.fa-trash {
-  margin-left: 10px;
-}
-
-/*Recipe box styling */
-#recipeBox li {
-  padding-top: 15px;
-}
-
-/* Logo in side menu */
-#logo {
-  padding-left: 100px;
-}
-
-/* Sticky Footer*/
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-main {
-  flex: 1 0 auto;
+.image-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
   margin-top: 50px;
 }
 
-/*Authentication/sign in button*/
-#authentication-btn {
-  margin-top: 10px;
-  background-color: #e8bd53;
-}
-
-/*Recipe box button styling*/
-#recipe-box-btn {
-  margin-top: 15px;
-}
-
-/*Making all the buttons the same color for consistency*/
-#submit,
-#logout-btn,
-#login-btn,
-#signup-btn,
-#open-login-btn,
-#login-confirm-btn,
-#logout-confirm-btn,
-.noteSave,
-.notesSave,
-#load-more {
-  background-color: #e8bd53;
-}
-
-/*Add margin to save button in notes modal*/
-.noteSave {
-  margin-right: 10px;
-}
-
-/*Icon in top navigation bar that opens recipe box*/
-.fa-cutlery:hover {
-  color: #e8bd53;
-}
-
-nav,
-.page-footer {
-  background-color: #264653;
-}
-
-#recipe-box-modal {
-  z-index: 1003;
-  display: block;
-}
-
-#load-more {
-  display: none;
-  margin-bottom: 10px;
-  float: right;
-}
-
-@media only screen and (max-width: 992px) {
-  header,
-  main,
-  footer {
-    padding-left: 0;
-  }
+#fitness-img {
+  width: 60%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -12,6 +12,7 @@
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "neumorphic-ui": "^1.1.0",
     "pg": "^8.2.1",
     "semver": "^7.3.2",
     "sequelize": "^5.22.3"

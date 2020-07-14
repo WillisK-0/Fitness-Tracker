@@ -20,6 +20,7 @@ function RecipeSearch(props) {
   return (
     <>
       <div className="calorie-tracker-wrapper">
+        <h2>Recipe Search</h2>
         <input
           type="text"
           placeholder="Search"
@@ -28,6 +29,12 @@ function RecipeSearch(props) {
         <NavLink to="/search/results">
           <button onClick={() => handleSearchPress(search)}>Search</button>
         </NavLink>
+      </div>
+      <div className="image-wrapper">
+        <img
+          id="fitness-img"
+          src="https://missrodeoamerica.files.wordpress.com/2015/08/nutrition-lifestyle.jpg"
+        ></img>
       </div>
     </>
   );

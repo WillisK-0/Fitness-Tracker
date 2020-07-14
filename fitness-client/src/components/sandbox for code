@@ -1,0 +1,19 @@
+        <input
+          id="username"
+          name="username"
+          placeholder="Username"
+          onChange={handleOnChange}
+          type="text"
+          minLength="6"
+          required
+          title="8 characters minimum"
+        ></input>
+        <input
+          id="password"
+          name="password"
+          placeholder="Password"
+          onChange={handleOnChange}
+          type="password"
+          minLength="6"
+          required
+        ></input>
