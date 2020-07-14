@@ -6,6 +6,26 @@ import "../style/recipeSearchResultsDetails.css";
 function RecipeSearchResultsDetials(props) {
   let index = props.match.params.index;
   let recipe = props.recipeSearchList[index];
+  console.log(recipe.recipe);
+
+  const handleAddRecipe = (dish) => {
+    fetch(
+      "http://localhost:3001/add-recipe/" + localStorage.getItem("userid"),
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ dish: dish }),
+      }
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((result) => {
+        alert(result.message);
+      });
+  };
 
   return (
     <>
@@ -38,6 +58,11 @@ function RecipeSearchResultsDetials(props) {
           {recipe.recipe.ingredientLines.map((ing, index) => {
             return <li className="ingredients-item">{ing}</li>;
           })}
+          {props.isAuthenticated == true ? (
+            <button onClick={() => handleAddRecipe(recipe.recipe.label)}>
+              +
+            </button>
+          ) : null}
         </ul>
       </div>
     </>
@@ -47,6 +72,7 @@ function RecipeSearchResultsDetials(props) {
 const mapStateToProps = (state) => {
   return {
     recipeSearchList: state.recipeSearchList,
+    isAuthenticated: state.isAuthenticated,
   };
 };
 

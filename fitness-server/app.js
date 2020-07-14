@@ -33,6 +33,17 @@ app.get("/food-items/:id", (req, res) => {
   });
 });
 
+app.get("/recipes/:id", (req, res) => {
+  let id = req.params.id;
+  db.Recipes.findAll({
+    where: {
+      userid: id,
+    },
+  }).then((result) => {
+    res.json(result);
+  });
+});
+
 // #######################################----POST ROUTES----########################################
 
 app.post("/update/:id", (req, res) => {
@@ -66,6 +77,17 @@ app.post("/update/:id", (req, res) => {
       res.send({ message: "Profile Updated Successfully" });
     });
   });
+});
+
+app.post("/add-recipe/:id", (req, res) => {
+  let id = req.params.id;
+  let dish = req.body.dish;
+
+  db.Recipes.create({
+    dish: dish,
+    userid: id,
+  });
+  res.send({ message: "Recipe Added" });
 });
 
 app.post("/user-login", (req, res) => {
