@@ -9,6 +9,8 @@ function Profile(props) {
   const [overview, setOverview] = useState(null);
   const [addFood, setAddFood] = useState([]);
   const [foodItems, setFoodItems] = useState([]);
+  const [recipes, setRecipes] = useState([]);
+  const [searchLink, setSearchLink] = useState("");
 
   const handleOverview = () => {
     if (userInfo.gender == "female") {
@@ -211,10 +213,19 @@ function Profile(props) {
       });
   };
 
+  const getRecipes = () => {
+    fetch("http://localhost:3001/recipes/" + localStorage.getItem("userid"))
+      .then((response) => response.json())
+      .then((result) => {
+        setRecipes(result);
+      });
+  };
+
   useEffect(() => {
     if (overview == null) {
       getFoodItems();
       getUserInfo();
+      getRecipes();
     } else if (userInfo.goal == "maintain weight") {
       props.dailyLimit(overview.bmr);
     } else if (userInfo.goal == "gain weight") {
@@ -270,6 +281,16 @@ function Profile(props) {
     } else {
       props.subCal(calories);
     }
+  };
+  const viewRecipe = (dish) => {
+    fetch(
+      `https://api.edamam.com/search?&app_id=4a5d81a2&app_key=379308ab9da9a8ee47f63563d2774ac4&from=0&to=9&q=${dish}`
+    )
+      .then((r) => r.json())
+      .then((result) => props.handleSearchAction(result.hits))
+      .then(() => {
+        setSearchLink("/search/" + dish);
+      });
   };
 
   return (
@@ -335,6 +356,20 @@ function Profile(props) {
           );
         })}
       </ul>
+      <ul>
+        {recipes.map((recipe, index) => {
+          return (
+            <li key={index}>
+              {recipe.dish}{" "}
+              <NavLink to="/search/results">
+                <button onClick={() => viewRecipe(recipe.dish)}>
+                  View Recipe
+                </button>
+              </NavLink>
+            </li>
+          );
+        })}
+      </ul>
     </>
   );
 }
@@ -345,6 +380,9 @@ const mapDispatchToProps = (dispatch) => {
     overview: (overview) => dispatch({ type: "UPDOV", value: overview }),
     dailyLimit: (limit) => dispatch({ type: "LMT", value: limit }),
     subCal: (calories) => dispatch({ type: "SUBCAL", value: -calories }),
+    handleSearchAction: (recipes) => {
+      dispatch({ type: "SEARCH", recipeSearchList: recipes });
+    },
   };
 };
 
