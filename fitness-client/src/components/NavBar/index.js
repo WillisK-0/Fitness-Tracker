@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink, Redirect } from "react-router-dom";
-
-import "../style/navBar.css";
+import "./style/navBar.css";
 import { connect } from "react-redux";
 function NavBar(props) {
   return (
@@ -14,24 +13,28 @@ function NavBar(props) {
           <li className="primary-menu-item">
             <NavLink to="/">Home</NavLink>
           </li>
+          {props.isAuthenticated == true ? (
+            <li>
+              <NavLink to="/profile">Profile</NavLink>
+            </li>
+          ) : null}
           <li>
             <NavLink to="/search">Recipes</NavLink>
           </li>
-
           <li>
-            <NavLink to="/">About</NavLink>
+            <NavLink to="/">Exercise</NavLink>
+          </li>
+          <li>
+            <NavLink to="/About">About Us</NavLink>
           </li>
           {props.isAuthenticated == false ? (
             <li>
               <NavLink to="/log-in">Login</NavLink>
             </li>
           ) : null}
-          <li>
-            <NavLink to="/">Exercise</NavLink>
-          </li>
-          {props.isAuthenticated == true ? (
+          {props.isAuthenticated == false ? (
             <li>
-              <NavLink to="/profile">Profile</NavLink>
+              <NavLink to="/register">Register</NavLink>
             </li>
           ) : null}
         </ul>

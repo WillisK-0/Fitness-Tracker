@@ -1,0 +1,98 @@
+.header {
+    background-color: #3ca0e7;
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    background-color: rgb(22, 24, 25);
+  }
+  
+  .header h1 {
+    text-align: center;
+    color: aliceblue;
+    font-family: "Yellowtail", cursive;
+    font-weight: bold;
+    font-size: 60px;
+    margin: 0 auto;
+  }
+  
+  .primary-navigation {
+    margin: 0 auto;
+    display: block;
+  
+    padding: 0px 0 0 0;
+    text-align: center;
+    font-size: 16px;
+  }
+  .primary-navigation ul li {
+    list-style: none;
+    margin: 0 auto;
+    border-left: 2px solid #3ca0e7;
+    border-right: 2px solid #3ca0e7;
+    display: inline-block;
+    padding: 0 30px;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    font-family: sans-serif;
+  }
+  
+  .primary-navigation li a {
+    color: white;
+  }
+  
+  .primary-navigation li a:hover {
+    color: #3ca0e7;
+  }
+  
+  .primary-navigation li:hover {
+    cursor: pointer;
+  }
+  
+  .primary-navigation ul li ul {
+    display: none;
+  
+    opacity: 0;
+    position: absolute;
+    padding-left: 0;
+    left: 0;
+  
+    background: white;
+  }
+  
+  .primary-navigation ul li:hover > ul,
+  ul li ul:hover {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  
+    min-width: 250px;
+    text-align: left;
+    padding-top: 20px;
+    box-shadow: 0px 3px 5px -1px #ccc;
+  }
+  
+  .primary-navigation ul li ul li {
+    clear: both;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+    border-style: none;
+  }
+  
+  .primary-navigation ul li ul li a:hover {
+    padding-left: 10px;
+    border-left: 2px solid #3ca0e7;
+    border-right: 2px solid #3ca0e7;
+    transition: all 0.3s ease;
+  }
+  
+  .primary-navigation a,
+  .primary-navigation a:hover {
+    text-decoration: none;
+    color: #3ca0e7;
+  }
+  .primary-navigation ul li ul li a {
+    transition: all 0.5s ease;
+  }
+  
