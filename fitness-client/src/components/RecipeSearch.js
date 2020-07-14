@@ -21,14 +21,16 @@ function RecipeSearch(props) {
     <>
       <div className="calorie-tracker-wrapper">
         <h2>Recipe Search</h2>
-        <input
-          type="text"
-          placeholder="Search"
-          onChange={(e) => setSearch(e.target.value)}
-        ></input>
-        <NavLink to="/search/results">
-          <button onClick={() => handleSearchPress(search)}>Search</button>
-        </NavLink>
+        <div className="search-container">
+          <input
+            type="text"
+            placeholder="Search"
+            onChange={(e) => setSearch(e.target.value)}
+          ></input>
+          <NavLink to="/search/results">
+            <button onClick={() => handleSearchPress(search)}>Search</button>
+          </NavLink>
+        </div>
       </div>
       <div className="image-wrapper">
         <img

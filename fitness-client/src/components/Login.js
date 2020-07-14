@@ -37,47 +37,48 @@ function Login(props) {
 
   return (
     <>
-     
       <div class="login-div" id="login-container">
-      <div class="logo"></div>
-      <div class="title">Analyze Fit<br/>Take Chances</div>
-      <div class="sub-title">Don't hesitate to go all out</div>
-  <div class="fields">
-    <div class="username">
-      <input 
-      id="username"
-      name="username"
-      onChange={handleOnChange}
-      type="text"
-      minLength="6"
-      required
-      title="8 characters minimum"
-      type="username" 
-      class="user-input" 
-      placeholder="username" />
-    </div>
-    <div class="password">
-          <input 
-          id="username"
-          name="username"
-          placeholder="Username"
-          onChange={handleOnChange}
-          type="text"
-          minLength="6"
-          required
-          title="8 characters minimum"
-          type="password" 
-          class="pass-input" 
-          placeholder="password" />
-    </div>
-  </div>
+        <div class="logo"></div>
+        <div class="title">
+          Analyze Fit
+          <br />
+          Take Chances
+        </div>
+        <div class="sub-title">Don't hesitate to go all out</div>
+        <div class="fields">
+          <div class="username">
+            <input
+              name="username"
+              onChange={handleOnChange}
+              type="text"
+              minLength="6"
+              required
+              title="8 characters minimum"
+              type="username"
+              class="user-input"
+              placeholder="username"
+            />
+          </div>
+          <div class="password">
+            <input
+              name="password"
+              placeholder="Username"
+              onChange={handleOnChange}
+              type="text"
+              minLength="6"
+              required
+              title="8 characters minimum"
+              type="password"
+              class="pass-input"
+              placeholder="password"
+            />
+          </div>
+        </div>
         <button class="signin-button" id="log-in-btn" onClick={handleOnClick}>
           LOG IN
         </button>
         <NavLink id="sign-up" to="/register">
-          <button class="signin-button">
-          Sign Up Here
-          </button>
+          <button class="signin-button">Sign Up Here</button>
         </NavLink>
         {userLogin !== null && userLogin == true ? <Redirect to="/" /> : null}
         {userLogin !== null && userLogin == false ? (
