@@ -17,6 +17,7 @@ import Recipe from "./components/Recipe";
 import RecipeSearch from "./components/RecipeSearch";
 import RecipeSearchResults from "./components/RecipeSearchResults";
 import RecipeSearchResultsDetails from "./components/RecipeSearchResultsDetails";
+import WorkoutLog from "./components/WorkoutLog";
 import "./assets/scss/style.scss";
 
 const store = createStore(
@@ -36,6 +37,8 @@ ReactDOM.render(
             <Route component={Register} path="/register" exact></Route>
             <Route component={Update} path="/update" exact></Route>
             <Route component={RecipeSearch} path="/search" exact></Route>
+            <Route component={WorkoutLog} path="/workout-log" exact></Route>
+
             <Route
               component={RecipeSearchResults}
               path="/search/results"
