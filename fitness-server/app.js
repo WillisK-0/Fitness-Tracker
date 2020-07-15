@@ -33,7 +33,6 @@ app.get("/food-items/:id", (req, res) => {
   });
 });
 
-<<<<<<< HEAD
 app.get("/exercise-items/:id", (req, res) => {
   let id = req.params.id;
   let today = new Date();
@@ -56,11 +55,17 @@ app.get("/exercise-items-filter/:id", (req, res) => {
   let id = req.params.id;
 
   db.Exercise.findAll({
-=======
+    where: {
+      userid: id,
+    },
+  }).then((result) => {
+    res.json(result);
+  });
+});
+
 app.get("/recipes/:id", (req, res) => {
   let id = req.params.id;
   db.Recipes.findAll({
->>>>>>> master
     where: {
       userid: id,
     },
