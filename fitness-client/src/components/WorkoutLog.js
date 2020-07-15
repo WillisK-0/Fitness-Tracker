@@ -7,6 +7,10 @@ function WorkoutLog() {
   const [addExercise, setAddExercise] = useState({});
   const [exerciseItems, setExerciseItems] = useState([]);
   const [dateArray, setDateArray] = useState([]);
+  const [selectedDate, setSelectedDate] = useState([]);
+  const [allExercises, setAllExercises] = useState([]);
+  const [filteredExercises, setFilteredExercises] = useState(null);
+
   const handleOnChange = (e) => {
     setAddExercise({
       ...addExercise,
@@ -43,16 +47,21 @@ function WorkoutLog() {
       });
   };
 
-  //   const getDateItems = () => {
-  //     fetch(
-  //       "http://localhost:3001/exercise-items-filter/" +
-  //         localStorage.getItem("userid")
-  //     )
-  //       .then((res) => res.json())
-  //       .then((result) => result.filter(()=>{
-  //         return( )
-  //       }));
-  //   };
+  const getDateItems = () => {
+    fetch(
+      "http://localhost:3001/exercise-items-filter/" +
+        localStorage.getItem("userid")
+    )
+      .then((res) => res.json())
+      .then((result) => {
+        const dateArray = result.map((res) => res.date);
+        const date = [...new Set(dateArray)];
+        console.log(date);
+        setAllExercises(result);
+
+        setDateArray(date);
+      });
+  };
 
   useEffect(() => {
     let today = new Date();
@@ -65,6 +74,23 @@ function WorkoutLog() {
     getDateItems();
     getExerciseItems();
   }, []);
+
+  const handleOptions = (e) => {
+    setSelectedDate({
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleOptionSubmit = () => {
+    let filteredExerciseByDate = allExercises.filter((x) => {
+      return selectedDate.date == x.date;
+    });
+    console.log(filteredExerciseByDate);
+    setFilteredExercises(filteredExerciseByDate);
+  };
+  const handleToday = () => {
+    setFilteredExercises(null);
+  };
 
   return (
     <>
@@ -89,25 +115,44 @@ function WorkoutLog() {
       <button onClick={handleAddExercise}>Add Exercise</button>
 
       <div>
-        <select>
+        <select name="date" onChange={handleOptions}>
           <option>Sort by Date</option>
-          {dateArray.filter((item) => {
-            return <option>{item.date}</option>;
+          {dateArray.map((item) => {
+            return <option>{item}</option>;
           })}
         </select>
+        <button onClick={handleOptionSubmit}>Filter</button>
+        <button onClick={handleToday}>View Today </button>
       </div>
 
       <div>
-        <h2>{date}</h2>
-        <ul>
-          {exerciseItems.map((res) => {
-            return (
-              <li>
-                {res.sets} - {res.exercise} - {res.weight}
-              </li>
-            );
-          })}
-        </ul>
+        {filteredExercises != null ? (
+          <ul>
+            <h2>All Exercises from {selectedDate.date}</h2>
+            {filteredExercises.map((res) => {
+              return (
+                <li>
+                  {res.sets} Sets of {res.exercise.toUpperCase()} at{" "}
+                  {res.weight}lbs.
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <div>
+            <h2>Today ({date})</h2>
+            <ul>
+              {exerciseItems.map((res) => {
+                return (
+                  <li>
+                    {res.sets} Sets of {res.exercise.toUpperCase()} at{" "}
+                    {res.weight}lbs.
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        )}
       </div>
     </>
   );

@@ -34,6 +34,26 @@ function Login(props) {
         }
       });
   };
+  const handleGuestLogin = () => {
+    fetch("http://localhost:3001/user-login", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ username: "guest", password: "guest" }),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((result) => {
+        localStorage.setItem("userid", result.id);
+
+        setUserLogin(result.login);
+        if (result.login == true) {
+          props.onAuthenticated();
+        }
+      });
+  };
 
   return (
     <>
@@ -77,9 +97,13 @@ function Login(props) {
         <button class="signin-button" id="log-in-btn" onClick={handleOnClick}>
           LOG IN
         </button>
+
         <NavLink id="sign-up" to="/register">
           <button class="signin-button">Sign Up Here</button>
         </NavLink>
+        <button class="signin-button" onClick={handleGuestLogin}>
+          LOG IN AS GUEST
+        </button>
         {userLogin !== null && userLogin == true ? <Redirect to="/" /> : null}
         {userLogin !== null && userLogin == false ? (
           <h1 id="incorrect">Login Incorrect</h1>
