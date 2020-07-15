@@ -94,38 +94,47 @@ function WorkoutLog() {
 
   return (
     <>
-      <input
-        type="number"
-        placeholder="Sets"
-        name="sets"
-        onChange={handleOnChange}
-      ></input>
-      <input
-        type="text"
-        name="exercise"
-        placeholder="Exercise"
-        onChange={handleOnChange}
-      ></input>
-      <input
-        type="number"
-        placeholder="Weight"
-        name="weight"
-        onChange={handleOnChange}
-      ></input>
-      <button onClick={handleAddExercise}>Add Exercise</button>
+      <div className="input-wrapper">
+        <div class="logo"></div>
+        <input
+          type="number"
+          placeholder="Sets"
+          name="sets"
+          onChange={handleOnChange}
+        ></input>
+        <input
+          type="text"
+          name="exercise"
+          placeholder="Exercise"
+          onChange={handleOnChange}
+        ></input>
+        <input
+          type="number"
+          placeholder="Weight"
+          name="weight"
+          onChange={handleOnChange}
+        ></input>
+        <button onClick={handleAddExercise}>Add Exercise</button>
+      </div>
 
-      <div>
+      <div className="selector-wrapper">
         <select name="date" onChange={handleOptions}>
           <option>Sort by Date</option>
           {dateArray.map((item) => {
             return <option>{item}</option>;
           })}
         </select>
-        <button onClick={handleOptionSubmit}>Filter</button>
-        <button onClick={handleToday}>View Today </button>
+      </div>
+      <div className="filter-button-wrapper">
+        <button className="filter-button" onClick={handleOptionSubmit}>
+          Filter
+        </button>
+        <button className="filter-button" onClick={handleToday}>
+          View Today{" "}
+        </button>
       </div>
 
-      <div>
+      <div className="exercise-content-wrapper">
         {filteredExercises != null ? (
           <ul>
             <h2>All Exercises from {selectedDate.date}</h2>
