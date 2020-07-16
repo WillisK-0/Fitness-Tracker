@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
 import "../style/recipeSearchResultsDetails.css";
@@ -7,6 +7,9 @@ function RecipeSearchResultsDetials(props) {
   let index = props.match.params.index;
   let recipe = props.recipeSearchList[index];
   console.log(recipe.recipe);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
 
   const handleAddRecipe = (dish) => {
     fetch(

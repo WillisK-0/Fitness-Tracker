@@ -4,7 +4,18 @@
   margin-right: auto;
   text-align: center;
 }
+.results-items {
+  background: none;
 
+  padding: 0;
+}
+
+.results-item {
+  background: none;
+}
+.results-item a {
+  background: none;
+}
 .food-card {
   width: 60%;
   margin-left: auto;
