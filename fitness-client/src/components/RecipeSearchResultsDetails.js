@@ -59,9 +59,14 @@ function RecipeSearchResultsDetials(props) {
             return <li className="ingredients-item">{ing}</li>;
           })}
           {props.isAuthenticated == true ? (
-            <button onClick={() => handleAddRecipe(recipe.recipe.label)}>
-              +
-            </button>
+            <div className="save-recipe-container">
+              <button
+                className="save-this-recipe"
+                onClick={() => handleAddRecipe(recipe.recipe.label)}
+              >
+                Save this Recipe
+              </button>
+            </div>
           ) : null}
         </ul>
       </div>

@@ -91,7 +91,7 @@
 }
 
 .recipes-ul {
-  background-color: rgb(187, 185, 185);
+  background-color: rgb(204, 201, 201);
   border: 1px solid transparent;
   border-bottom: 1px solid grey;
   border-radius: 5px;
@@ -171,6 +171,11 @@
 
 .welcome-user {
   margin: 20px;
+  font-family: Arial;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  color: black;
+  background-color: transparent;
 }
 
 .recipe-container {
@@ -185,4 +190,68 @@
   justify-content: center;
   margin: auto;
   margin-top: 10px;
+}
+
+.welcome-container {
+  background-color: rgb(214, 214, 214);
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  border: 1px solid grey;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+.welcoming-paragraph {
+  background-color: transparent;
+  color: rgb(94, 94, 94);
+  width: 75%;
+}
+
+.account-overview {
+  width: 175px;
+  margin: 15px;
+  background-color: rgb(8, 9, 32);
+  padding: 8px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.log-out-btn {
+  width: 175px;
+  margin: 15px;
+  background-color: rgb(8, 9, 32);
+  padding: 8px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.update-profile {
+  width: 175px;
+  margin: 15px;
+  background-color: rgb(8, 9, 32);
+  padding: 8px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.update-profile:hover,
+.log-out-btn:hover,
+.account-overview:hover {
+  background-color: rgb(0, 70, 121);
 }

@@ -1,8 +1,9 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { NavLink, Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
+import { HashLink } from "react-router-hash-link";
 import "../style/profile.css";
 
 function Profile(props) {
@@ -313,16 +314,31 @@ function Profile(props) {
 
   return (
     <>
-      <h1 className="welcome-user">Welcome {userInfo.username}</h1>
-      <button onClick={handleOverview}>Overview</button>
-      <NavLink to="/log-in">
-        <button onClick={handleSignOut}>Sign Out</button>
-      </NavLink>
-      <NavLink to="/update">
-        <button>Update Profile</button>
-      </NavLink>
+      <div className="welcome-container">
+        <h1 className="welcome-user">Welcome {userInfo.username}</h1>
+        <p className="welcoming-paragraph">
+          Here we provide a profile overview using the information provided when
+          you signed up with us. We will show you what is needed to be done to
+          reach your daily goals.
+        </p>
+
+        <HashLink smooth to="#overview">
+          <button className="account-overview" onClick={handleOverview}>
+            Overview
+          </button>
+        </HashLink>
+
+        <NavLink to="/log-in">
+          <button className="log-out-btn" onClick={handleSignOut}>
+            Sign Out
+          </button>
+        </NavLink>
+        <NavLink to="/update">
+          <button className="update-profile">Update Profile</button>
+        </NavLink>
+      </div>
       {overview !== null ? (
-        <div className="userOverview">
+        <div id="overview" className="userOverview">
           <h1 className="user-goal">Your Goal is to {userInfo.goal}</h1>
           {userInfo.goal == "maintain weight" ? (
             <h2 className="calorie-day-count">
