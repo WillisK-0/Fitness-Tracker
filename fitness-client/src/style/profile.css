@@ -68,7 +68,7 @@
 
 .food-container {
   background-color: rgb(204, 201, 201);
-  width: 30%;
+  width: 40%;
   border: 1px solid grey;
   padding: 10px;
   border-radius: 5px;
@@ -101,6 +101,7 @@
   border-radius: 5px;
   padding: 15px;
   margin-top: 10px;
+  width: 40%;
 }
 
 .recipe-li {
@@ -280,7 +281,7 @@ html {
   background-color: rgb(0, 70, 121);
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 950px) {
   .welcome-container {
     width: 95%;
   }
@@ -312,6 +313,9 @@ html {
     text-align: center;
   }
   .food-container {
-    width: 96%;
+    width: 85%;
+  }
+  .recipes-ul {
+    width: 85%;
   }
 }
