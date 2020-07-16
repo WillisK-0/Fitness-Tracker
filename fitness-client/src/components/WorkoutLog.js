@@ -92,6 +92,39 @@ function WorkoutLog() {
     setFilteredExercises(null);
   };
 
+  const handleRemoveExercise = (exerciseId) => {
+    fetch("http://localhost:3001/remove-exercise/" + exerciseId, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ delete: "deleted" }),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((result) => {
+        alert(result.message);
+        getExerciseItems();
+      });
+  };
+
+  const handleRemoveExerciseFil = (exerciseId, date) => {
+    fetch("http://localhost:3001/remove-exercise/" + exerciseId, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ delete: "deleted" }),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((result) => {
+        alert(result.message);
+      });
+  };
+
   return (
     <>
       <div className="input-wrapper">
@@ -143,6 +176,13 @@ function WorkoutLog() {
                 <li>
                   {res.sets} Sets of {res.exercise.toUpperCase()} at{" "}
                   {res.weight}lbs.
+                  <button
+                    onClick={() =>
+                      handleRemoveExerciseFil(res.id, selectedDate.date)
+                    }
+                  >
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                  </button>
                 </li>
               );
             })}
@@ -156,6 +196,9 @@ function WorkoutLog() {
                   <li>
                     {res.sets} Sets of {res.exercise.toUpperCase()} at{" "}
                     {res.weight}lbs.
+                    <button onClick={() => handleRemoveExercise(res.id)}>
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
                   </li>
                 );
               })}

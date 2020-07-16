@@ -1,0 +1,188 @@
+.userOverview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-goal {
+  background-color: rgb(202, 202, 202);
+  width: 75%;
+  text-align: center;
+  color: black;
+  padding: 8px;
+  border: 1px solid grey;
+  font-weight: lighter;
+}
+
+.calorie-container {
+  display: flex;
+  width: 70%;
+  margin-bottom: 0;
+}
+
+.calorie-info {
+  background-color: rgb(202, 202, 202);
+  border: 1px solid grey;
+  width: 45%;
+  text-align: center;
+  padding: 15px;
+  font-weight: lighter;
+  color: black;
+  margin-bottom: 5px;
+}
+
+.calorie-number {
+  background-color: rgb(60, 160, 231);
+  color: black;
+  text-align: center;
+  width: 15%;
+  font-weight: 500;
+  border: 1px solid grey;
+  margin-left: 3px;
+  margin-bottom: 5px;
+}
+
+.calorie-day-count {
+  letter-spacing: 0.5px;
+  font-size: larger;
+  border: 1px solid grey;
+  width: 65%;
+  background-color: rgb(0, 70, 121);
+  font-weight: lighter;
+  padding: 10px;
+  text-align: center;
+  margin-top: 0;
+}
+
+.line-sep {
+  width: 90%;
+
+  height: 2px;
+  background-color: rgb(187, 185, 185);
+  margin: 50px;
+}
+
+.food-container {
+  background-color: rgb(204, 201, 201);
+  width: 30%;
+  border: 1px solid grey;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.added-foods {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid transparent;
+  border-bottom: 1px solid grey;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.recipe-table {
+  float: left;
+  background-color: transparent;
+  color: black;
+  font-weight: 500;
+}
+
+.recipes-ul {
+  background-color: rgb(187, 185, 185);
+  border: 1px solid transparent;
+  border-bottom: 1px solid grey;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 10px;
+}
+
+.recipe-li {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border: 1px solid white;
+  border-bottom: 1px solid grey;
+  border-radius: 5px;
+  padding: 15px;
+}
+.food-li {
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.input-add-food {
+  background-color: white;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  margin: 5px;
+  padding: 8px;
+  color: black;
+}
+
+.input-add-food::placeholder {
+  color: black;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.add-food-btn {
+  width: 175px;
+  margin: 15px;
+  background-color: rgb(8, 9, 32);
+  padding: 8px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.add-food-btn:hover {
+  background-color: rgb(0, 70, 121);
+}
+
+.foods-table {
+  float: left;
+  background-color: transparent;
+  color: black;
+  font-weight: 500;
+}
+
+.ate-button {
+  margin-left: 5px;
+  margin-right: 5px;
+
+  cursor: pointer;
+}
+
+.button-container {
+  display: inline-block;
+  position: relative;
+  background-color: transparent;
+  float: right;
+}
+
+#trash-can {
+  cursor: pointer;
+  color: rgb(255, 31, 31);
+}
+
+.welcome-user {
+  margin: 20px;
+}
+
+.recipe-container {
+  background-color: transparent;
+  width: 100%;
+
+  padding: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 10px;
+}
