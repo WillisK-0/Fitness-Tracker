@@ -165,13 +165,13 @@
   display: inline-block;
   position: relative;
   background-color: transparent;
+  float: right;
 }
 
 #trash-can {
   cursor: pointer;
   color: rgb(255, 31, 31);
 }
-
 
 .welcome-user {
   margin: 20px;
@@ -180,7 +180,7 @@
   letter-spacing: 1.5px;
   color: black;
   background-color: transparent;
-
+}
 
 .profile-header button {
   border: none;
