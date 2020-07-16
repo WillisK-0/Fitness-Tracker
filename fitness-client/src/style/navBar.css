@@ -1,15 +1,12 @@
 .header {
   background-color: #3ca0e7;
   margin-bottom: 10px;
-  background: #10131F;
+  background: #10131f;
 }
-
 
 ul primary-menu-items {
   background-color: rgb(22, 24, 25);
 }
-
-
 
 .header h1 {
   text-align: center;
@@ -18,7 +15,6 @@ ul primary-menu-items {
   font-weight: bold;
   font-size: 60px;
   margin: 0 auto;
-  
 }
 
 .primary-navigation {
@@ -27,32 +23,36 @@ ul primary-menu-items {
 
   /* padding: 0px 0 0 0; */
   text-align: center;
-  background: #10131F;
   font-size: 16px;
+  background: #10111b;
 }
+
+.primary-navigation ul {
+  background: none;
+}
+
 .primary-navigation ul li {
   width: 159px;
-height: 50px;
-/* margin: px; */
-font-size: 16px;
-border-radius: 80px;
-border-style: none;
-color: white;
-font-weight: 400;
-margin-bottom: 30px;
-border-radius: 25px;
-box-shadow: inset 8px 8px 8px #0a0a12,
-            inset -4px -4px 18px #1D1D29;
-            transition: 0.5s;
-            border: none;
-            outline: none;
-            background: none;
-            font-size: 18px;
-            color: #555;
-            padding: 20px 10px 20px 5px;
-            
+  height: 50px;
+  /* margin: px; */
+  font-size: 16px;
+  border-radius: 80px;
+  border-style: none;
+  color: white;
+  font-weight: 400;
+  margin-bottom: 30px;
+  border-radius: 25px;
+  box-shadow: inset 8px 8px 8px #0a0a12, inset -4px -4px 18px #1d1d29;
+  transition: 0.5s;
+  border: none;
+  outline: none;
+  background: #10111b;
+  font-size: 18px;
+  color: #555;
+  padding: 20px 10px 20px 5px;
+
   list-style: none;
-  margin:  16px;
+  margin: 16px;
   border-left: 2px solid #3ca0e7;
   border-right: 2px solid #3ca0e7;
   display: inline-block;
@@ -66,13 +66,12 @@ box-shadow: inset 8px 8px 8px #0a0a12,
 }
 
 .primary-navigation:hover ul li {
-    background: #191826;
+  background: #191826;
 }
 
 .primary-navigation:hover ul li {
-    background: #191826;
+  background: #191826;
 }
-
 
 .primary-navigation li a {
   color: white;
