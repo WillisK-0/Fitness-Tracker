@@ -21,12 +21,21 @@ input {
     /* top left */ -8px -8px 15px #ffffff;
 }
 
+.workout-log-header {
+  text-align: center;
+}
+.workout-log-header {
+  font-family: "Yellowtail", cursive;
+  font-size: 60px;
+  margin: auto 0px;
+}
 .input-wrapper {
   width: 30%;
   height: auto;
-  margin-left: auto;
+  margin-top: 3%;
   margin-right: auto;
   padding: 60px 35px 35px 35px;
+  margin-left: 10%;
 
   display: flex;
   flex-direction: column;
@@ -71,6 +80,8 @@ input {
   width: 70%;
   margin-left: auto;
   margin-right: auto;
+  background: #10131f;
+
   margin-top: 30px;
   display: flex;
   flex-direction: row;
@@ -81,15 +92,27 @@ input {
 .selector-wrapper select {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 10px;
   color: white;
+  border: 0.0025px #3ca0e7 solid;
+  border-radius: 25px;
 }
 
 .exercise-content-wrapper {
-  width: 70%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   align-items: center;
+  background: #101420;
+  border: 0.0025px #3ca0e752 solid;
+  border-radius: 25px;
+}
+
+.exercise-content-wrapper ul,
+h2,
+li {
+  background-color: #101420;
 }
 
 .filter-button-wrapper {
@@ -97,8 +120,81 @@ input {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  background: #10131f;
 }
 .filter-button {
+  border-radius: 25px;
+  padding: 15px;
+  margin: 25px;
+  box-shadow: inset 8px 8px 8px #0a0a12, inset -8px -8px 8px #1d1d29;
+  transition: 0.5s;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-left: 2px solid #3ca0e7;
+  border-right: 2px solid #3ca0e7;
+}
+
+.right-side-wrapper {
+  width: 40%;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: 10%;
+  margin-top: -605px;
+  background: #10131f;
+  box-shadow: 13px 13px 20px #0a0a12, -13px -13px 20px #1d1d29;
+  padding: 60px 35px 35px 35px;
+}
+
+.exercise-item {
+  font-size: 30px;
+  padding: 10px;
+  color: white;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #2c3e50;
+  background-image: none;
+}
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select */
+.select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: #2c3e50;
+  overflow: hidden;
+  border-radius: 0.25em;
+  margin: auto;
+}
+select {
+  flex: 1;
+  padding: 0 0.5em;
+  color: #fff;
+  cursor: pointer;
+}
+/* Arrow */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #34495e;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: 0.25s all ease;
+  -o-transition: 0.25s all ease;
+  transition: 0.25s all ease;
 }
