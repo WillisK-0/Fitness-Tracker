@@ -23,7 +23,7 @@ function NavBar(props) {
           </li>
           {props.isAuthenticated == true ? (
             <li>
-              <NavLink to="/workout-log">Exercise</NavLink>
+              <NavLink to="/workout-log">Workout-Log</NavLink>
             </li>
           ) : null}
           <li>

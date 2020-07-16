@@ -314,7 +314,11 @@ function Profile(props) {
   return (
     <>
       <div className="profile-header">
+        <hr className="solid"></hr>
+
         <h1>Welcome, {userInfo.username}</h1>
+        <hr className="solid"></hr>
+
         <button onClick={handleOverview}>Overview</button>
         <NavLink to="/log-in">
           <button onClick={handleSignOut}>Sign Out</button>

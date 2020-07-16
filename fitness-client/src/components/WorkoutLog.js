@@ -95,7 +95,9 @@ function WorkoutLog() {
   return (
     <>
       <div className="workout-log-header">
+        <hr className="solid"></hr>
         <h1>Workout Log</h1>
+        <hr className="solid"></hr>
       </div>
       <div className="input-wrapper">
         <div class="logo-workout-log"></div>
