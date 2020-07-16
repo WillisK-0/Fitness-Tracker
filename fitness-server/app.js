@@ -76,6 +76,17 @@ app.get("/recipes/:id", (req, res) => {
 
 // #######################################----POST ROUTES----########################################
 
+app.post("/remove-recipe/:id", (req, res) => {
+  let id = req.params.id;
+  db.Recipes.destroy({
+    where: {
+      id: id,
+    },
+  }).then(() => {
+    res.send({ message: "Recipe Removed" });
+  });
+});
+
 app.post("/update/:id", (req, res) => {
   let id = req.params.id;
   let username = req.body.username;
@@ -106,6 +117,17 @@ app.post("/update/:id", (req, res) => {
     ).then(() => {
       res.send({ message: "Profile Updated Successfully" });
     });
+  });
+});
+
+app.post("/remove-exercise/:id", (req, res) => {
+  let id = req.params.id;
+  db.Exercise.destroy({
+    where: {
+      id: id,
+    },
+  }).then(() => {
+    res.send({ message: "Exercise Removed" });
   });
 });
 

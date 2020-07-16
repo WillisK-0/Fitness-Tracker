@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { NavLink, Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
+import "../style/profile.css";
 
 function Profile(props) {
   const [userInfo, setUserInfo] = useState([]);
@@ -275,6 +276,23 @@ function Profile(props) {
       });
   };
 
+  const handleRemoveDish = (recipeId) => {
+    fetch("http://localhost:3001/remove-recipe/" + recipeId, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({ delete: "deleted" }),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((result) => {
+        alert(result.message);
+        getRecipes();
+      });
+  };
+
   const handleSubCal = (calories) => {
     if (props.dailyLimitx <= 0) {
       alert("You have reached your daily limit");
@@ -295,7 +313,7 @@ function Profile(props) {
 
   return (
     <>
-      <h1>Welcome {userInfo.username}</h1>
+      <h1 className="welcome-user">Welcome {userInfo.username}</h1>
       <button onClick={handleOverview}>Overview</button>
       <NavLink to="/log-in">
         <button onClick={handleSignOut}>Sign Out</button>
@@ -305,71 +323,123 @@ function Profile(props) {
       </NavLink>
       {overview !== null ? (
         <div className="userOverview">
-          <h1>Your Goal is to {userInfo.goal}</h1>
+          <h1 className="user-goal">Your Goal is to {userInfo.goal}</h1>
           {userInfo.goal == "maintain weight" ? (
-            <h2>You have ({props.dailyLimitx})cals left for the day</h2>
+            <h2 className="calorie-day-count">
+              You have ({props.dailyLimitx}) Calories left for the day
+            </h2>
           ) : userInfo.goal == "lose weight" ? (
-            <h2>You have ({props.dailyLimitx})cals left for the day</h2>
+            <h2 className="calorie-day-count">
+              You have ({props.dailyLimitx})cals left for the day
+            </h2>
           ) : (
-            <h2>
+            <h2 className="calorie-day-count">
               You have anything over ({props.dailyLimitx})cals left for the day
             </h2>
           )}
-          <p>
-            Your BMR is ({overview.bmr}) cals/day to maintain current weight
-          </p>
           <p>Anything over your BMR can be used to gain weight</p>
-          <p>Mild weight loss will be {overview.mwl} cals/day</p>
-          <p>Moderate Weight loss will be {overview.wl} cals/day</p>
-          <p>Extreme weight loss will be {overview.el}cals/day</p>
+          <div className="calorie-container">
+            <p className="calorie-info">Basal Metabolic Rate (BMR)</p>
+            <p className="calorie-number">{overview.bmr} Calories/day</p>
+          </div>
+
+          <div className="calorie-container">
+            <p className="calorie-info">Maintain Currenct Weight</p>
+            <p className="calorie-number">{overview.bmr} Calories/day</p>
+          </div>
+
+          <div className="calorie-container">
+            <p className="calorie-info">Mild Weight Loss(0.5lb/week)</p>
+            <p className="calorie-number">{overview.mwl} Calories/day</p>
+          </div>
+
+          <div className="calorie-container">
+            <p className="calorie-info">Moderate Weight Loss(1 lb/week)</p>
+            <p className="calorie-number">{overview.wl} Calories/day</p>
+          </div>
+
+          <div className="calorie-container">
+            <p className="calorie-info">Extreme Weight Loss(2 lb/week)</p>
+            <p className="calorie-number">{overview.el} Calories/day</p>
+          </div>
+          <hr className="line-sep"></hr>
+          <div className="food-container">
+            <p className="foods-table">Foods Table</p>
+            <p className="foods-table">{props.dailyLimitx}</p>
+            <input
+              className="input-add-food"
+              onChange={handleOnChange}
+              type="text"
+              placeholder="Enter Food"
+              name="food"
+            ></input>
+            <input
+              className="input-add-food"
+              onChange={handleOnChange}
+              type="text"
+              placeholder="Enter Calories"
+              name="calories"
+            ></input>
+
+            <button className="add-food-btn" onClick={handleAddFood}>
+              Add
+            </button>
+
+            <ul className="added-foods">
+              {foodItems.map((foodItem, index) => {
+                return (
+                  <li className="food-li">
+                    {foodItem.food}({foodItem.calories})cal
+                    <div className="button-container">
+                      <button
+                        className="ate-button"
+                        onClick={() => handleSubCal(foodItem.calories)}
+                      >
+                        Eat
+                      </button>
+                      <button onClick={() => handleRemoveFoodItem(foodItem.id)}>
+                        <i
+                          id="trash-can"
+                          class="fa fa-trash"
+                          aria-hidden="true"
+                        ></i>
+                      </button>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          <ul className="recipes-ul">
+            {recipes.map((recipe, index) => {
+              return (
+                <div className="recipe-container">
+                  <p className="recipe-table">Your Recipes</p>
+
+                  <li className="recipe-li" key={index}>
+                    {recipe.dish}{" "}
+                    <NavLink to="/search/results">
+                      <button
+                        className="ate-button"
+                        onClick={() => viewRecipe(recipe.dish)}
+                      >
+                        View Recipe
+                      </button>
+                    </NavLink>
+                    <button onClick={() => handleRemoveDish(recipe.id)}>
+                      <i
+                        id="trash-can"
+                        class="fa fa-trash"
+                        aria-hidden="true"
+                      ></i>
+                    </button>
+                  </li>
+                </div>
+              );
+            })}
+          </ul>
         </div>
       ) : null}
-      <div>
-        <input
-          onChange={handleOnChange}
-          type="text"
-          placeholder="Enter Food"
-          name="food"
-        ></input>
-        <input
-          onChange={handleOnChange}
-          type="text"
-          placeholder="Enter Calories"
-          name="calories"
-        ></input>
-
-        <button onClick={handleAddFood}>Add</button>
-      </div>
-
-      <ul>
-        {foodItems.map((foodItem, index) => {
-          return (
-            <li>
-              {foodItem.food} - {foodItem.calories}cal
-              <button onClick={() => handleSubCal(foodItem.calories)}>
-                I Ate This
-              </button>
-              <button onClick={() => handleRemoveFoodItem(foodItem.id)}>
-                <i class="fa fa-trash" aria-hidden="true"></i>
-              </button>
-            </li>
-          );
-        })}
-      </ul>
-      <ul>
-        {recipes.map((recipe, index) => {
-          return (
-            <li key={index}>
-              {recipe.dish}{" "}
-              <NavLink to="/search/results">
-                <button onClick={() => viewRecipe(recipe.dish)}>
-                  View Recipe
-                </button>
-              </NavLink>
-            </li>
-          );
-        })}
-      </ul>
     </>
   );
 }
