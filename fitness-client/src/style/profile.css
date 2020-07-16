@@ -1,3 +1,7 @@
+* {
+  font-family: "Oswald", sans-serif;
+}
+
 .userOverview {
   display: flex;
   flex-direction: column;
@@ -161,13 +165,13 @@
   display: inline-block;
   position: relative;
   background-color: transparent;
-  float: right;
 }
 
 #trash-can {
   cursor: pointer;
   color: rgb(255, 31, 31);
 }
+
 
 .welcome-user {
   margin: 20px;
@@ -176,8 +180,28 @@
   letter-spacing: 1.5px;
   color: black;
   background-color: transparent;
-}
 
+
+.profile-header button {
+  border: none;
+  border-radius: 25px;
+  border-left: 2px solid #3ca0e7;
+  border-right: 2px solid #3ca0e7;
+  box-shadow: inset 8px 8px 8px #0a0a12, inset -8px -8px 8px #1d1d29;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  height: 60px;
+  margin: 15px;
+  margin-bottom: 20px;
+  outline: none;
+  text-align: center;
+  transition: 0.5s;
+  margin: 0px 8%;
+  padding: 15px;
+}
 .recipe-container {
   background-color: transparent;
   width: 100%;

@@ -314,6 +314,7 @@ function Profile(props) {
 
   return (
     <>
+
       <div className="welcome-container">
         <h1 className="welcome-user">Welcome {userInfo.username}</h1>
         <p className="welcoming-paragraph">
@@ -337,6 +338,7 @@ function Profile(props) {
           <button className="update-profile">Update Profile</button>
         </NavLink>
       </div>
+
       {overview !== null ? (
         <div id="overview" className="userOverview">
           <h1 className="user-goal">Your Goal is to {userInfo.goal}</h1>

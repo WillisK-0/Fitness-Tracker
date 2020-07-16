@@ -1,14 +1,15 @@
 .content-wrapper {
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
-  border: 5px #3ca0e7 solid;
+  width: 60%;
+  border: 0.5px #3ca0e7 solid;
   border-radius: 10px;
 }
 
 .content-wrapper h2 {
   text-align: center;
   font-size: 50px;
+  background: none;
 }
 
 .save-this-recipe {
@@ -45,10 +46,25 @@
   font-size: 35px;
 }
 
-.nutrients-item {
-  text-align: center;
-}
-
+.nutrients-item,
 .ingredients-item {
   text-align: center;
+  background: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nutrients-items,
+.ingredients-items {
+  padding: 0px;
+}
+
+@media only screen and (max-width: 915px) {
+  .content-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    border: 0.5px #3ca0e7 solid;
+    border-radius: 10px;
+    width: 90%;
+  }
 }

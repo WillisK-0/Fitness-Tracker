@@ -56,7 +56,6 @@ function WorkoutLog() {
       .then((result) => {
         const dateArray = result.map((res) => res.date);
         const date = [...new Set(dateArray)];
-        console.log(date);
         setAllExercises(result);
 
         setDateArray(date);
@@ -73,7 +72,8 @@ function WorkoutLog() {
     setDate(today);
     getDateItems();
     getExerciseItems();
-  }, []);
+    performFilter();
+  }, [selectedDate]);
 
   const handleOptions = (e) => {
     setSelectedDate({
@@ -81,54 +81,26 @@ function WorkoutLog() {
     });
   };
 
-  const handleOptionSubmit = () => {
+  const performFilter = () => {
     let filteredExerciseByDate = allExercises.filter((x) => {
       return selectedDate.date == x.date;
     });
-    console.log(filteredExerciseByDate);
     setFilteredExercises(filteredExerciseByDate);
   };
+
   const handleToday = () => {
     setFilteredExercises(null);
   };
 
-  const handleRemoveExercise = (exerciseId) => {
-    fetch("http://localhost:3001/remove-exercise/" + exerciseId, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({ delete: "deleted" }),
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((result) => {
-        alert(result.message);
-        getExerciseItems();
-      });
-  };
-
-  const handleRemoveExerciseFil = (exerciseId, date) => {
-    fetch("http://localhost:3001/remove-exercise/" + exerciseId, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({ delete: "deleted" }),
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((result) => {
-        alert(result.message);
-      });
-  };
-
   return (
     <>
+      <div className="workout-log-header">
+        <hr className="solid"></hr>
+        <h1>Workout Log</h1>
+        <hr className="solid"></hr>
+      </div>
       <div className="input-wrapper">
-        <div class="logo"></div>
+        <div class="logo-workout-log"></div>
         <input
           type="number"
           placeholder="Sets"
@@ -150,61 +122,50 @@ function WorkoutLog() {
         <button onClick={handleAddExercise}>Add Exercise</button>
       </div>
 
-      <div className="selector-wrapper">
-        <select name="date" onChange={handleOptions}>
-          <option>Sort by Date</option>
-          {dateArray.map((item) => {
-            return <option>{item}</option>;
-          })}
-        </select>
-      </div>
-      <div className="filter-button-wrapper">
-        <button className="filter-button" onClick={handleOptionSubmit}>
-          Filter
-        </button>
-        <button className="filter-button" onClick={handleToday}>
-          View Today{" "}
-        </button>
-      </div>
-
-      <div className="exercise-content-wrapper">
-        {filteredExercises != null ? (
-          <ul>
-            <h2>All Exercises from {selectedDate.date}</h2>
-            {filteredExercises.map((res) => {
-              return (
-                <li>
-                  {res.sets} Sets of {res.exercise.toUpperCase()} at{" "}
-                  {res.weight}lbs.
-                  <button
-                    onClick={() =>
-                      handleRemoveExerciseFil(res.id, selectedDate.date)
-                    }
-                  >
-                    <i class="fa fa-trash" aria-hidden="true"></i>
-                  </button>
-                </li>
-              );
+      <div className="right-side-wrapper">
+        <div className="select">
+          <select name="date" onChange={handleOptions}>
+            <option>Sort by Date</option>
+            {dateArray.map((item) => {
+              return <option>{item}</option>;
             })}
-          </ul>
-        ) : (
-          <div>
-            <h2>Today ({date})</h2>
-            <ul>
-              {exerciseItems.map((res) => {
+          </select>
+        </div>
+        <div className="filter-button-wrapper">
+          <button className="filter-button" onClick={handleToday}>
+            View Today{" "}
+          </button>
+        </div>
+
+        <div className="exercise-content-wrapper">
+          {filteredExercises != null ? (
+            <ul className="exercise-items">
+              <h2>{selectedDate.date}</h2>
+              {filteredExercises.map((res) => {
                 return (
-                  <li>
+                  <li className="exercise-item">
                     {res.sets} Sets of {res.exercise.toUpperCase()} at{" "}
                     {res.weight}lbs.
-                    <button onClick={() => handleRemoveExercise(res.id)}>
-                      <i class="fa fa-trash" aria-hidden="true"></i>
-                    </button>
                   </li>
                 );
               })}
             </ul>
-          </div>
-        )}
+          ) : (
+            <div className="exercise-content-wrapper">
+              <h2>Today {date}</h2>
+              <ul className="exercise-items">
+                {exerciseItems.map((res) => {
+                  return (
+                    <li className="exercise-item">
+                      {res.sets} Sets of {res.exercise.toUpperCase()} at{" "}
+                      {res.weight}lbs
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          )}
+        </div>
       </div>
     </>
   );
