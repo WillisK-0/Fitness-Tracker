@@ -4,33 +4,44 @@
   width: 50%;
   margin-top: 5%;
   text-align: center;
-  border: 5px #3ca0e7 solid;
+  border: 0.5px #3ca0e7 solid;
   border-radius: 10px;
 }
-/* .search-container {
-  background-color: black;
-  width: 370px;
-  height: 55px;
-
-  margin: auto;
-  margin-bottom: 10px;
-} */
+.search-container {
+  background: none;
+}
 
 .calorie-tracker-wrapper h2 {
-  margin: 0;
+  font-family: "Yellowtail", cursive;
+  font-size: 60px;
+  margin: 10px 0px;
   padding-bottom: 20px;
   padding: 15px;
+  background: none;
 }
 
 .calorie-tracker-wrapper input {
-  margin-bottom: 40px;
-  margin-right: 10px;
+  margin: 25px auto;
   /* border: 4px solid #1f5d8a; */
   height: 40px;
   width: 300px;
   border-radius: 10px;
   padding: 10px;
+  width: 90%;
   /* margin-bottom: auto; */
+}
+.calorie-tracker-wrapper button {
+  border: none;
+  border-left: 2px solid #3ca0e7;
+  border-radius: 25px;
+  border-right: 2px solid #3ca0e7;
+  box-shadow: inset 8px 8px 8px #0a0a12, inset -8px -8px 8px #1d1d29;
+  cursor: pointer;
+  margin: 25px 25px;
+  outline: none;
+  padding: 20px;
+  transition: 0.5s;
+  background: none;
 }
 
 .image-wrapper {
@@ -45,4 +56,27 @@
   height: auto;
   margin-left: auto;
   margin-right: auto;
+}
+
+@media only screen and (max-width: 915px) {
+  .calorie-tracker-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    margin-top: 5%;
+    text-align: center;
+    border: 0.5px #3ca0e7 solid;
+    border-radius: 10px;
+  }
+  .image-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+  }
+  #fitness-img {
+    width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

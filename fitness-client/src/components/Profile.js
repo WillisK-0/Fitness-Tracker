@@ -313,14 +313,21 @@ function Profile(props) {
 
   return (
     <>
-      <h1 className="welcome-user">Welcome {userInfo.username}</h1>
-      <button onClick={handleOverview}>Overview</button>
-      <NavLink to="/log-in">
-        <button onClick={handleSignOut}>Sign Out</button>
-      </NavLink>
-      <NavLink to="/update">
-        <button>Update Profile</button>
-      </NavLink>
+      <div className="profile-header">
+        <hr className="solid"></hr>
+
+        <h1>Welcome, {userInfo.username}</h1>
+        <hr className="solid"></hr>
+
+        <button onClick={handleOverview}>Overview</button>
+        <NavLink to="/log-in">
+          <button onClick={handleSignOut}>Sign Out</button>
+        </NavLink>
+        <NavLink to="/update">
+          <button>Update Profile</button>
+        </NavLink>
+      </div>
+
       {overview !== null ? (
         <div className="userOverview">
           <h1 className="user-goal">Your Goal is to {userInfo.goal}</h1>
