@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { NavLink, Redirect } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
+import "../style/profile.css";
 
 function Profile(props) {
   const [userInfo, setUserInfo] = useState([]);
@@ -294,8 +295,9 @@ function Profile(props) {
   };
 
   return (
-    <>
-      <h1>Welcome {userInfo.username}</h1>
+    <><body class="bodyClass">      <iframe class="bodyclass1 calendar" src="https://calendar.google.com/calendar/embed?src=codebloodeddev.com_k7enlc4gsklts4tp13gb7rgltc%40group.calendar.google.com&ctz=America%2FDetroit"></iframe>< div class="content">
+
+      <h1 class="text">Welcome {userInfo.username}          </h1>
       <button onClick={handleOverview}>Overview</button>
       <NavLink to="/log-in">
         <button onClick={handleSignOut}>Sign Out</button>
@@ -370,6 +372,7 @@ function Profile(props) {
           );
         })}
       </ul>
+    </div></body>
     </>
   );
 }

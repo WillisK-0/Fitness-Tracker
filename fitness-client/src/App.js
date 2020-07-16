@@ -6,7 +6,18 @@ import AppRoute from "./utils/AppRoute";
 import ScrollReveal from "./utils/ScrollReveal";
 import ReactGA from "react-ga";
 import { NeuButton } from 'neumorphic-ui';
+import firebase from "firebase";
 
+const firebaseConfig = {
+  apiKey: "AIzaSyBsf36fMLHkGOzZFfJ9a4ChnqX-7DznOws",
+  authDomain: "analyze-fit.firebaseapp.com",
+  databaseURL: "https://analyze-fit.firebaseio.com",
+  projectId: "analyze-fit",
+  storageBucket: "analyze-fit.appspot.com",
+  messagingSenderId: "1022340894520",
+  appId: "1:1022340894520:web:535df9876bc4ce36de7bcd",
+  measurementId: "G-D1GFJX9XT4"
+};
 
 // Layouts
 import LayoutDefault from "./layouts/LayoutDefault";
