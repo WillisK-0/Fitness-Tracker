@@ -53,7 +53,8 @@ function Login(props) {
         if (result.login == true) {
           props.onAuthenticated();
         }
-      });
+      })
+      .then(window.scrollTo(0, 0));
   };
 
   return (

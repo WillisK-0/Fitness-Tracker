@@ -151,6 +151,7 @@ li {
   color: white;
   font-size: 30px;
   padding: 10px;
+  list-style-type: none;
 }
 select {
   color: #fff;
