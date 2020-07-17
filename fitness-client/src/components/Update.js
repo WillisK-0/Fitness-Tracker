@@ -39,7 +39,7 @@ function Update(props) {
   return (
     <>
       <div className="update-profile-container">
-        <h1>Update Page</h1>
+        <h1>Update Profile</h1>
         {props.isAuthenticated == true ? (
           <form className="form-container">
             <input

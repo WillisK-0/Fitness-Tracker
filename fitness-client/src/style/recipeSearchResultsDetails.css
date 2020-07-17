@@ -48,6 +48,7 @@
 
 .nutrients-item,
 .ingredients-item {
+  list-style-type: none;
   text-align: center;
   background: none;
   margin-left: auto;

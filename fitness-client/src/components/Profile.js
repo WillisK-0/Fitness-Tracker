@@ -314,7 +314,6 @@ function Profile(props) {
 
   return (
     <>
-
       <div className="welcome-container">
         <h1 className="welcome-user">Welcome {userInfo.username}</h1>
         <p className="welcoming-paragraph">
@@ -383,7 +382,16 @@ function Profile(props) {
           <hr className="line-sep"></hr>
           <div className="food-container">
             <p className="foods-table">Foods Table</p>
-            <p className="foods-table">{props.dailyLimitx}</p>
+            <p
+              style={
+                props.dailyLimitx > 0
+                  ? { color: "rgb(26, 190, 26)" }
+                  : { color: "red" }
+              }
+              className="foods-table"
+            >
+              {props.dailyLimitx}
+            </p>
             <input
               className="input-add-food"
               onChange={handleOnChange}
@@ -403,59 +411,99 @@ function Profile(props) {
               Add
             </button>
 
-            <ul className="added-foods">
-              {foodItems.map((foodItem, index) => {
-                return (
-                  <li className="food-li">
-                    {foodItem.food}({foodItem.calories})cal
-                    <div className="button-container">
-                      <button
-                        className="ate-button"
-                        onClick={() => handleSubCal(foodItem.calories)}
-                      >
-                        Eat
-                      </button>
-                      <button onClick={() => handleRemoveFoodItem(foodItem.id)}>
+            {foodItems.length > 0 ? (
+              <ul className="added-foods">
+                {foodItems.map((foodItem, index) => {
+                  return (
+                    <li className="food-li">
+                      {foodItem.food}({foodItem.calories})cal
+                      <div className="button-container">
+                        <button
+                          className="ate-button"
+                          onClick={() => handleSubCal(foodItem.calories)}
+                        >
+                          Eat
+                        </button>
+                        <button
+                          onClick={() => handleRemoveFoodItem(foodItem.id)}
+                        >
+                          <i
+                            id="trash-can"
+                            class="fa fa-trash"
+                            aria-hidden="true"
+                          ></i>
+                        </button>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : null}
+          </div>
+          <div className="food-container">
+            <p className="foods-table">Recipe Table</p>
+
+            {recipes.length > 0 ? (
+              <ul className="added-foods">
+                {recipes.map((recipe, index) => {
+                  return (
+                    <li className="food-li">
+                      {recipe.dish}
+                      <div className="button-container">
+                        <NavLink to="/search/results">
+                          <button
+                            className="ate-button"
+                            onClick={() => viewRecipe(recipe.dish)}
+                          >
+                            View
+                          </button>
+                        </NavLink>
+
+                        <button onClick={() => handleRemoveDish(recipe.id)}>
+                          <i
+                            id="trash-can"
+                            class="fa fa-trash"
+                            aria-hidden="true"
+                          ></i>
+                        </button>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : null}
+          </div>
+
+          {/* {recipes.length > 0 ? (
+            <div className="recipe-container">
+              <p className="recipe-table">Your Recipes</p>
+              <ul className="recipes-ul">
+                {recipes.map((recipe, index) => {
+                  return (
+                    <li className="recipe-li" key={index}>
+                      {recipe.dish}{" "}
+                      <NavLink to="/search/results">
+                        <button
+                          className="ate-button"
+                          onClick={() => viewRecipe(recipe.dish)}
+                        >
+                          View
+                        </button>
+                      </NavLink>
+                      <button onClick={() => handleRemoveDish(recipe.id)}>
                         <i
                           id="trash-can"
                           class="fa fa-trash"
                           aria-hidden="true"
                         ></i>
                       </button>
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          <ul className="recipes-ul">
-            {recipes.map((recipe, index) => {
-              return (
-                <div className="recipe-container">
-                  <p className="recipe-table">Your Recipes</p>
-
-                  <li className="recipe-li" key={index}>
-                    {recipe.dish}{" "}
-                    <NavLink to="/search/results">
-                      <button
-                        className="ate-button"
-                        onClick={() => viewRecipe(recipe.dish)}
-                      >
-                        View Recipe
-                      </button>
-                    </NavLink>
-                    <button onClick={() => handleRemoveDish(recipe.id)}>
-                      <i
-                        id="trash-can"
-                        class="fa fa-trash"
-                        aria-hidden="true"
-                      ></i>
-                    </button>
-                  </li>
-                </div>
-              );
-            })}
-          </ul>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+            
+          ) : null} */}
         </div>
       ) : null}
     </>

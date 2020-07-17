@@ -7,18 +7,25 @@ function RecipeSearchResults(props) {
   return (
     <>
       <div className="results-wrapper">
-        <ul className="results-items">
+        <ul className="result-ul">
           {props.recipeSearchList.map((item, index) => {
             return (
-              <li className="results-item">
-                <NavLink to={"results/" + index}>
+              <NavLink to={"results/" + index}>
+                <li className="results-li">
                   <div className="food-card">
-                    <img src={item.recipe.image} id="food-image"></img>
-                    <figcaption>{item.recipe.label}</figcaption>
+                    <img
+                      className="food-image"
+                      src={item.recipe.image}
+                      id="food-image"
+                    ></img>
+                    <p className="healthy-recipes">Healthy Recipes</p>
+
+                    <div className="recipe-name">{item.recipe.label}</div>
+
                     <input type="hidden" value={index}></input>
                   </div>
-                </NavLink>
-              </li>
+                </li>
+              </NavLink>
             );
           })}
         </ul>
