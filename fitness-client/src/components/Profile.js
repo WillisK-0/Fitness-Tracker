@@ -361,7 +361,7 @@ function Profile(props) {
           </div>
 
           <div className="calorie-container">
-            <p className="calorie-info">Maintain Currenct Weight</p>
+            <p className="calorie-info">Maintain Current Weight</p>
             <p className="calorie-number">{overview.bmr} Calories/day</p>
           </div>
 
@@ -473,37 +473,6 @@ function Profile(props) {
               </ul>
             ) : null}
           </div>
-
-          {/* {recipes.length > 0 ? (
-            <div className="recipe-container">
-              <p className="recipe-table">Your Recipes</p>
-              <ul className="recipes-ul">
-                {recipes.map((recipe, index) => {
-                  return (
-                    <li className="recipe-li" key={index}>
-                      {recipe.dish}{" "}
-                      <NavLink to="/search/results">
-                        <button
-                          className="ate-button"
-                          onClick={() => viewRecipe(recipe.dish)}
-                        >
-                          View
-                        </button>
-                      </NavLink>
-                      <button onClick={() => handleRemoveDish(recipe.id)}>
-                        <i
-                          id="trash-can"
-                          class="fa fa-trash"
-                          aria-hidden="true"
-                        ></i>
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-            
-          ) : null} */}
         </div>
       ) : null}
     </>

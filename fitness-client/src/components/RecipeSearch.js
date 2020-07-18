@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import "../style/recipeSearch.css";
 
 function RecipeSearch(props) {
+  window.scrollTo(0, 0);
   const [search, setSearch] = useState("");
   const [searchLink, setSearchLink] = useState("");
   function handleSearchPress() {
@@ -21,22 +22,22 @@ function RecipeSearch(props) {
     <>
       <div className="calorie-tracker-wrapper">
         <h2>Recipe Search</h2>
-        <div className="search-container">
-          <input
-            type="text"
-            placeholder="Search"
-            onChange={(e) => setSearch(e.target.value)}
-          ></input>
-          <NavLink to="/search/results">
-            <button onClick={() => handleSearchPress(search)}>Search</button>
-          </NavLink>
-        </div>
-      </div>
-      <div className="image-wrapper">
-        <img
-          id="fitness-img"
-          src="https://missrodeoamerica.files.wordpress.com/2015/08/nutrition-lifestyle.jpg"
-        ></img>
+
+        <input
+          className="search-text-box"
+          type="text"
+          placeholder="What are you looking for ?"
+          onChange={(e) => setSearch(e.target.value)}
+        ></input>
+
+        <NavLink to="/search/results">
+          <button
+            className="search-recipe-btn"
+            onClick={() => handleSearchPress(search)}
+          >
+            Search
+          </button>
+        </NavLink>
       </div>
     </>
   );
