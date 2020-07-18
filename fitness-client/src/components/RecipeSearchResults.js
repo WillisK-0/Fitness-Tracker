@@ -4,11 +4,12 @@ import { NavLink } from "react-router-dom";
 import "../style/recipeSearchResults.css";
 
 function RecipeSearchResults(props) {
+  window.scrollTo(0, 0);
   return (
     <>
       <div className="results-wrapper">
         <ul className="result-ul">
-          {props.recipeSearchList.map((item, index) => {
+          {props.recipeSearchList.slice(0, 8).map((item, index) => {
             return (
               <NavLink to={"results/" + index}>
                 <li className="results-li">

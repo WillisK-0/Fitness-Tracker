@@ -58,7 +58,10 @@ const Testimonial = ({
               <div className="tiles-item-inner">
                 <div className="testimonial-item-content">
                   <p className="text-sm mb-0">
-                    — WOW. Top notch app from some top notch developers. This is what I imagine it looks like when a unicorn leaves behind waste product. Absolutley stunning UI, full immersive content, and DETAIL!
+                    — WOW. Top notch app from some top notch developers. This is
+                    what I imagine it looks like when a unicorn leaves behind
+                    waste product. Absolutley stunning UI, full immersive
+                    content, and DETAIL!
                   </p>
                 </div>
                 <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
@@ -77,7 +80,9 @@ const Testimonial = ({
               <div className="tiles-item-inner">
                 <div className="testimonial-item-content">
                   <p className="text-sm mb-0">
-                    — BRAVO BRAVO BRAVO. An open source app tailored to the user...what a concept! It took JR Developers to realize the USER COMES FIRST. A+++
+                    — BRAVO BRAVO BRAVO. An open source app tailored to the
+                    user...what a concept! It took JR Developers to realize the
+                    USER COMES FIRST. A+++
                   </p>
                 </div>
                 <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
@@ -99,7 +104,11 @@ const Testimonial = ({
               <div className="tiles-item-inner">
                 <div className="testimonial-item-content">
                   <p className="text-sm mb-0">
-                    — An app for the Underrepresnted and an app for the over-represented...what a concept! Pure Brilliance. I love the lack of user discrimination with this app. The math is done for you no matter WHO WHAT OR where you are. No more soggy notepads!
+                    — An app for the Underrepresnted and an app for the
+                    over-represented...what a concept! Pure Brilliance. I love
+                    the lack of user discrimination with this app. The math is
+                    done for you no matter WHO WHAT OR where you are. No more
+                    soggy notepads!
                   </p>
                 </div>
                 <div className="testimonial-item-footer text-xs mt-32 mb-0 has-top-divider">
