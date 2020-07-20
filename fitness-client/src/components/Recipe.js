@@ -19,8 +19,7 @@ export default function Recipe({ recipe }) {
     }
 
   }
-  alert("Real talk, look im tellin ya mane if ya get jammed up dont mention my name..");
-  console.log("Im knee deep in the game so when its time to reup Im knee deep in the cane");
+
   return (
     <>
       <div className="col-10 mx-auto col-md-6 col-lg-4 my-3">
