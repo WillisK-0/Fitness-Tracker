@@ -37,6 +37,7 @@ function App(props) {
   }, [location]);
 
   return (
+
     <>
       <NavBar></NavBar>
 

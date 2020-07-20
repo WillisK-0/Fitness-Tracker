@@ -30,6 +30,9 @@ function RecipeSearch(props) {
   }, [displayRecipes]);
   return (
     <>
+    <div>
+      <h3 class="recipeIntro"><p > Feel free to search for a recipe! Users you can save recipes to your own profile page and add your own notes to your stored recipes!
+      </p></h3>
       <div className="calorie-tracker-wrapper">
         <h2>Recipe Search</h2>
 
@@ -48,6 +51,7 @@ function RecipeSearch(props) {
             Search
           </button>
         </NavLink>
+      </div> 
       </div>
 
       <hr className="hr-search"></hr>

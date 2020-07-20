@@ -59,16 +59,16 @@ function Login(props) {
 
   return (
     <>
-      <div class="login-div" id="login-container">
-        <div class="logo"></div>
-        <div class="title">
+      <div className="login-div" id="login-container">
+        <div className="logo"></div>
+        <div className="title">
           Analyze Fit
           <br />
           Take Chances
         </div>
-        <div class="sub-title">Don't hesitate to go all out</div>
-        <div class="fields">
-          <div class="username">
+        <div className="sub-title">Don't hesitate to go all out</div>
+        <div className="fields">
+          <div className="username">
             <input
               name="username"
               onChange={handleOnChange}
@@ -77,11 +77,11 @@ function Login(props) {
               required
               title="8 characters minimum"
               type="username"
-              class="user-input"
+              className="user-input"
               placeholder="username"
             />
           </div>
-          <div class="password">
+          <div className="password">
             <input
               name="password"
               placeholder="Username"
@@ -91,19 +91,23 @@ function Login(props) {
               required
               title="8 characters minimum"
               type="password"
-              class="pass-input"
+              className="pass-input"
               placeholder="password"
             />
           </div>
         </div>
-        <button class="signin-button" id="log-in-btn" onClick={handleOnClick}>
+        <button
+          className="signin-button"
+          id="log-in-btn"
+          onClick={handleOnClick}
+        >
           LOG IN
         </button>
 
         <NavLink id="sign-up" to="/register">
-          <button class="signin-button">Sign Up Here</button>
+          <button className="signin-button">Sign Up Here</button>
         </NavLink>
-        <button class="signin-button" onClick={handleGuestLogin}>
+        <button className="signin-button" onClick={handleGuestLogin}>
           LOG IN AS GUEST
         </button>
         {userLogin !== null && userLogin == true ? <Redirect to="/" /> : null}
