@@ -127,7 +127,7 @@ function Register(props) {
                 id="goals-selector"
               >
                 <option value="">Goals</option>
-                <option value="maintain weight">Maintain Weight</option>
+                <option value=""></option>
                 <option value="gain weight">Gain Weight</option>
                 <option value="lose weight">Lose Weight</option>
               </select>

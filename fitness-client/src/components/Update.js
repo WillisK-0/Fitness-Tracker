@@ -113,7 +113,7 @@ function Update(props) {
               required
             >
               <option value="">Goals</option>
-              <option value="maintain weight">Maintain Weight</option>
+              <option value="Maintain Weight">Maintain Weight</option>
               <option value="gain weight">Gain Weight</option>
               <option value="lose weight">Lose Weight</option>
             </select>
