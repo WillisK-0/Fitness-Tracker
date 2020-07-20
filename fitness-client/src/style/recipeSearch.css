@@ -9,6 +9,13 @@
   background: url("https://wellnessdoctorrx.com/wp-content/uploads/2020/01/Functional-Neurology-How-to-Improve-Adrenal-Fatigue-with-Diet-El-Paso-TX-Chiropractor.jpg")
     no-repeat center;
   background-size: cover;
+  margin-bottom: 100px;
+}
+
+.hr-search {
+  margin-bottom: 50px;
+  width: 90%;
+  color: rgb(197, 197, 197);
 }
 
 body h2 {
