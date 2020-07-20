@@ -228,11 +228,11 @@ function Profile(props) {
       getFoodItems();
       getUserInfo();
       getRecipes();
-    } else if (userInfo.goal == "Maintain Weight") {
+    } else if (userInfo.goal == "maintain weight") {
       props.dailyLimit(overview.bmr);
-    } else if (userInfo.goal == "Gain Weight") {
+    } else if (userInfo.goal == "gain weight") {
       props.dailyLimit(overview.bmr);
-    } else if (userInfo.goal == "Lose Weight") {
+    } else if (userInfo.goal == "lose weight") {
       props.dailyLimit(overview.mwl);
     } else {
       props.overview(overview);
@@ -319,7 +319,7 @@ function Profile(props) {
         <p className="welcoming-paragraph">
           Here we provide a profile overview using the information provided when
           you signed up with us. We will show you what is needed to be done to
-          reach your daily goals.<hr class="line-sep"></hr>
+          reach your daily goals.<hr class="welcome-line-sep"></hr>
         </p>
 
         <HashLink smooth to="#overview">
