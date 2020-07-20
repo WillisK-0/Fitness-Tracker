@@ -12,7 +12,8 @@
 .register-title {
   text-align: center;
   background: none;
-  margin: 5px;
+  margin: 10px;
+  letter-spacing: 2px;
 }
 
 #register-container,

@@ -5,10 +5,9 @@ import { NavLink } from "react-router-dom";
 import "../style/recipeSearch.css";
 
 function RecipeSearch(props) {
-  window.scrollTo(0, 0);
   const [search, setSearch] = useState("");
   const [searchLink, setSearchLink] = useState("");
-  const [displayRecipes, setDisplayRecipes] = useState(null);
+
   function handleSearchPress() {
     fetch(
       `https://api.edamam.com/search?&app_id=4a5d81a2&app_key=379308ab9da9a8ee47f63563d2774ac4&from=0&to=9&q=${search}`
@@ -19,68 +18,37 @@ function RecipeSearch(props) {
         setSearchLink("/search/" + search);
       });
   }
-  useEffect(() => {
-    fetch(
-      `https://api.edamam.com/search?&app_id=4a5d81a2&app_key=379308ab9da9a8ee47f63563d2774ac4&from=0&to=9&q=beef`
-    )
-      .then((response) => response.json())
-      .then((result) => {
-        setDisplayRecipes(result.hits);
-      });
-  }, [displayRecipes]);
+
   return (
     <>
-    <div>
-      <h3 class="recipeIntro"><p > Feel free to search for a recipe! Users you can save recipes to your own profile page and add your own notes to your stored recipes!
-      </p></h3>
-      <div className="calorie-tracker-wrapper">
-        <h2>Recipe Search</h2>
+      <div>
+        <h3 class="recipeIntro">
+          <p>
+            {" "}
+            Feel free to search for a recipe! Users can save recipes to their
+            own profile page and add your own notes to your stored recipes!
+          </p>
+        </h3>
+        <div className="calorie-tracker-wrapper">
+          <h2>Recipe Search</h2>
 
-        <input
-          className="search-text-box"
-          type="text"
-          placeholder="What are you looking for ?"
-          onChange={(e) => setSearch(e.target.value)}
-        ></input>
+          <input
+            className="search-text-box"
+            type="text"
+            placeholder="What are you looking for ?"
+            onChange={(e) => setSearch(e.target.value)}
+          ></input>
 
-        <NavLink to="/search/results">
-          <button
-            className="search-recipe-btn"
-            onClick={() => handleSearchPress(search)}
-          >
-            Search
-          </button>
-        </NavLink>
-      </div> 
-      </div>
-
-      <hr className="hr-search"></hr>
-      {displayRecipes != null ? (
-        <div className="results-wrapper">
-          <ul className="result-ul">
-            {displayRecipes.slice(0, 4).map((item, index) => {
-              return (
-                <NavLink to={"results/" + index}>
-                  <li className="results-li">
-                    <div className="food-card">
-                      <img
-                        className="food-image"
-                        src={item.recipe.image}
-                        id="food-image"
-                      ></img>
-                      <p className="healthy-recipes">Healthy Recipes</p>
-
-                      <div className="recipe-name">{item.recipe.label}</div>
-
-                      <input type="hidden" value={index}></input>
-                    </div>
-                  </li>
-                </NavLink>
-              );
-            })}
-          </ul>
+          <NavLink to="/search/results">
+            <button
+              className="search-recipe-btn"
+              onClick={() => handleSearchPress(search)}
+            >
+              Search
+            </button>
+          </NavLink>
         </div>
-      ) : null}
+      </div>
     </>
   );
 }
