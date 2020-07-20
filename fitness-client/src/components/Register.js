@@ -138,7 +138,7 @@ function Register(props) {
               SIGN UP
             </button>
             <NavLink to="/log-in">
-              <button className="signin-button">Login</button>
+              <button className="signin-button">LOG IN</button>
             </NavLink>
           </form>
         </div>

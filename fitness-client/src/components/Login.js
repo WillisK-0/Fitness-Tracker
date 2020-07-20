@@ -67,6 +67,9 @@ function Login(props) {
           Take Chances
         </div>
         <div className="sub-title">Don't hesitate to go all out</div>
+        <h1 className="register-title">Login</h1>
+        <hr className="login-hr"></hr>
+
         <div className="fields">
           <div className="username">
             <input
@@ -105,7 +108,7 @@ function Login(props) {
         </button>
 
         <NavLink id="sign-up" to="/register">
-          <button className="signin-button">Sign Up Here</button>
+          <button className="signin-button">SIGN UP</button>
         </NavLink>
         <button className="signin-button" onClick={handleGuestLogin}>
           LOG IN AS GUEST

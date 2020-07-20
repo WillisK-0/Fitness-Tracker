@@ -44,7 +44,7 @@ body {
 
 .login-div {
   width: 430px;
-  height: 790px;
+  height: 880px;
   margin: 0 auto;
   padding: 60px 35px 35px 35px;
   border-radius: 40px;
@@ -83,7 +83,7 @@ body {
 
 .fields {
   width: 100%;
-  padding: 75px 5px 5px 5px;
+  padding: 20px 5px 5px 5px;
 }
 
 .fields input {
