@@ -9,26 +9,29 @@
   margin-top: 30px;
 }
 .account-overview{
+  font-weight: 600;
   background-color: #3ca0e7;
   border-radius: 24px;
   background: linear-gradient(145deg, #004b81, #003f6d);
-  box-shadow: inset 10px 10px 20px #001c30, 
-              inset -10px -10px 20px #0070c2;
+  box-shadow: inset -3px -3px 8px #001c30, 
+              inset 3px 3px 8px #0070c2;
 }
 
 .log-out-btn{
+  font-weight: 600;
   background-color: #3ca0e7;
   border-radius: 24px;
   background: linear-gradient(145deg, #004b81, #003f6d);
-  box-shadow: inset 10px 10px 20px #001c30, 
-              inset -10px -10px 20px #0070c2;
+  box-shadow: inset -3px -3px 8px #001c30, 
+              inset 3px 3px 8px #0070c2;
 }
 .update-profile{
+  font-weight: 600;
   background-color: #3ca0e7;
   border-radius: 24px;
   background: linear-gradient(145deg, #004b81, #003f6d);
-  box-shadow: inset 10px 10px 20px #001c30, 
-              inset -10px -10px 20px #0070c2;
+  box-shadow: inset -3px -3px 8px #001c30, 
+              inset 3px 3px 8px #0070c2;
 }
 .user-goal {
   margin-top: 40px;
@@ -42,10 +45,11 @@
   font-weight: lighter;
   border-radius: 10px;
   background: #cacaca;
-  box-shadow: inset 10px 10px 20px #515151, inset -10px -10px 20px #ffffff;
+  box-shadow: inset -10px -10px 20px #515151, inset 10px 10px 20px #ffffff;
 }
 
 .calorie-container {
+  justify-content: center;
   display: flex;
   width: 70%;
   margin-bottom: 0;
@@ -62,31 +66,31 @@
   margin-bottom: 5px;
   border-radius: 10px;
   background: #cacaca;
-  box-shadow: inset 10px 10px 20px #515151, inset -10px -10px 20px #ffffff;
+  box-shadow: inset 7px 7px 15px #cacaca, inset -10px -5px 9px #515151;
 }
 
 .calorie-number {
   padding-top: 13px;
-  background-color: #3ca0e7;
-  color: black;
+  background-color: rgb(0, 70, 121);
+  color: white;
   text-align: center;
-  width: 15%;
+  width: 25%;
   font-weight: 500;
-  border: 1px solid grey;
+  /* border: 1px solid grey; */
   margin-left: 3px;
   margin-bottom: 5px;
   border-radius: 10px;
 
-background: #3ca0e7;
-box-shadow: inset -10px -10px 20px #001c30, 
-            inset 10px 10px 20px #3ca0e7;
+background: #004679;
+box-shadow: inset -7px -7px 15px #001c30, 
+            inset 5px 5px 9px #0070c2
 
 }
 
 .calorie-day-count {
   letter-spacing: 0.5px;
   font-size: larger;
-  border: 1px solid grey;
+  /* border: 1px solid grey; */
   width: 65%;
   background-color: rgb(0, 70, 121);
   font-weight: lighter;
@@ -95,7 +99,7 @@ box-shadow: inset -10px -10px 20px #001c30,
   margin-top: 20px;
   border-radius: 10px;
   background: #004679;
-  box-shadow: inset 10px 10px 20px #001c30, inset -10px -10px 20px #0070c2;
+  box-shadow: inset -7px -7px 15px #001c30, inset 7px 7px 15px #0070c2;
 }
 
 .line-sep {
@@ -104,6 +108,12 @@ box-shadow: inset -10px -10px 20px #001c30,
   height: 2px;
   background-color: rgb(187, 185, 185);
   margin: 50px;
+}
+div .food-container  {
+ 
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: -2px;
 }
 
 .food-container {
@@ -117,10 +127,14 @@ box-shadow: inset -10px -10px 20px #001c30,
   align-items: center;
   justify-content: center;
   margin: auto;
+  /* margin-top: px; */
   margin-bottom: 30px;
   border-radius: 10px;
+  background: linear-gradient(145deg, #090a22, #07081d);
+  box-shadow: inset 5px 5px 10px #666666, inset -5px -5px 10px #cacaca;
+  /* border-radius: 10px;
   background: #cacaca;
-  box-shadow: inset 10px 10px 20px #515151, inset -10px -10px 20px #ffffff;
+  box-shadow: inset 10px 10px 20px #515151, inset -10px -10px 20px #ffffff; */
 }
 
 .added-foods {
@@ -131,10 +145,19 @@ box-shadow: inset -10px -10px 20px #001c30,
   padding: 15px;
 }
 
+.added-foods{
+  /* background-color: #cacaca; */
+  /* background-color: #1d1d29; */
+  border-radius: 10px;
+  background: linear-gradient(145deg, #090a22, #07081d);
+  box-shadow: inset 1px 1px 3px #666666, inset -1px -1px 3px #cacaca;
+}
+
 .food-li {
-  background-color: rgb(255, 255, 255);
-  color: black;
+  /* background-color: rgb(255, 255, 255); */
   list-style-type: none;
+  text-transform: capitalize;
+background-color: transparent;
 }
 
 .input-add-food {
@@ -146,7 +169,7 @@ box-shadow: inset -10px -10px 20px #001c30,
   color: black;
   border-radius: 10px;
   background: linear-gradient(145deg, #cacaca, #e6e6e6);
-  box-shadow: 10px 10px 20px #666666, -10px -10px 20px #cacaca;
+  box-shadow: inset 3px 3px 6px #666666, inset -3px -3px 6px #cacaca;
 }
 
 .input-add-food::placeholder {
@@ -166,31 +189,39 @@ box-shadow: inset -10px -10px 20px #001c30,
   cursor: pointer;
   border-radius: 10px;
   background: linear-gradient(145deg, #090a22, #07081d);
-  box-shadow: 10px 10px 20px #666666, -10px -10px 20px #cacaca;
+  box-shadow: -2px -2px 6px #666666, 2px 2px 6px #cacaca;
 }
 
 .add-food-btn:hover {
   background-color: rgb(0, 70, 121);
 }
 
-.added-foods {
+/* .added-foods {;
   border-radius: 10px;
   background: linear-gradient(145deg, #090a22, #07081d);
   box-shadow: 5px 5px 20px #03040d, -2px -2px 20px #0d0e33;
+} */
+
+p {
+  background-color: transparent;
 }
 
-.foods-table {
+p .foods-table {
+  /* margin-top: 5px; */
+  /* margin-bottom: px; */
   float: left;
   background-color: transparent;
-  color: black;
+  color: #666666;
   font-weight: 500;
 }
 
 .ate-button {
   margin-left: 5px;
   margin-right: 5px;
-
   cursor: pointer;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #090a22, #07081d);
+  box-shadow: 1px 1px 3px #666666, -1px -1px 3px #cacaca;
 }
 
 .button-container {
@@ -198,11 +229,14 @@ box-shadow: inset -10px -10px 20px #001c30,
   background-color: transparent;
   /* inline-block is ignored due to the float. If 'float' has a value other than 'none', the box is floated and 'display' is treated as 'block' */
   float: right;
+  
 }
 
 #trash-can {
   cursor: pointer;
   color: rgb(255, 31, 31);
+  background: linear-gradient(145deg, #090a22, #07081d);
+  box-shadow: 1px 1px 3px #666666, -1px -1px 3px #cacaca;
 }
 
 .welcome-user {
@@ -249,7 +283,7 @@ box-shadow: inset -10px -10px 20px #001c30,
   padding: 10px;
   border-radius: 10px;
   background: #cacaca;
-  box-shadow: inset 10px 10px 20px #515151, inset -10px -10px 20px #ffffff;
+  box-shadow: inset -10px -10px 20px #515151, inset 10px 10px 20px grey;
   /* border-radius: 24px;
 background: linear-gradient(145deg, #d8d8d8, #b6b6b6);
 box-shadow:  10px 10px 20px #515151, 
@@ -318,8 +352,9 @@ html {
 
   .welcome-user {
     margin: 20px;
-    font-family: Arial;
-    font-weight: 500;
+    /* font-size: bold; */
+    font-family: sans-serif;
+    font-weight: 600;
     font-size: xx-large;
     letter-spacing: 1.5px;
     color: black;
@@ -332,10 +367,9 @@ html {
   .calorie-day-count {
     width: 85%;
     font-size: large;
-
     border-radius: 10px;
-background: linear-gradient(145deg, #004b81, #003f6d);
-box-shadow:  10px 10px 20px #001c30, 
+    background: linear-gradient(145deg, #004b81, #003f6d);
+    box-shadow:  10px 10px 20px #001c30, 
              -10px -10px 20px #0070c2;
 
   }

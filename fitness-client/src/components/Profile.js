@@ -319,7 +319,7 @@ function Profile(props) {
         <p className="welcoming-paragraph">
           Here we provide a profile overview using the information provided when
           you signed up with us. We will show you what is needed to be done to
-          reach your daily goals.<br></br>
+          reach your daily goals.<hr class="line-sep"></hr>
         </p>
 
         <HashLink smooth to="#overview">

@@ -41,25 +41,23 @@ ul primary-menu-items {
   color: white;
   font-weight: 400;
   margin-bottom: 30px;
-  border-radius: 25px;
-  box-shadow: inset 8px 8px 8px #0a0a12, inset -4px -4px 18px #1d1d29;
+  border-radius: 10px;
   transition: 0.5s;
-  border: none;
   outline: none;
-  background: none;
+  /* background: none; */
   font-size: 18px;
   color: #555;
   padding: 20px 10px 20px 5px;
-
+  font-weight: 600;
   list-style: none;
   margin: 16px;
-  border-left: 2px solid #3ca0e7;
-  border-right: 2px solid #3ca0e7;
+  /* background-color: rgb(22, 24, 25)'; */
+  background: #004679;
+  box-shadow: inset 7px 7px 15px #0070c2, 
+              inset -10px -5px 9px #001c30 ;
   display: inline-block;
   padding: 10px;
   position: relative;
-  font-weight: 600;
-  text-decoration: wavy;
   text-align: center;
   justify-content: center;
   font-family: sans-serif;
