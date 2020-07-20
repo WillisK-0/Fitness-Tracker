@@ -55,12 +55,20 @@ body {
   letter-spacing: 0.5px;
   font-family: "Lato", sans-serif;
   font-weight: 700;
-  color: #555;
+  color: white;
 }
 
 .linksref {
   box-sizing: content-box;
   display: flex;
   justify-content: space-between;
-  background-color: transparent;
+  background: none;
+}
+
+.tiles-item-inner {
+  background: none;
+}
+
+.icon-links {
+  background: none;
 }
