@@ -15,28 +15,28 @@ function NavBar(props) {
           </li>
 
           {props.isAuthenticated == true ? (
-            <li>
+            <li className="primary-menu-item">
               <NavLink to="/profile">Profile</NavLink>
             </li>
           ) : null}
-          <li>
+          <li className="primary-menu-item">
             <NavLink to="/search">Recipes</NavLink>
           </li>
           {props.isAuthenticated == true ? (
-            <li>
+            <li className="primary-menu-item">
               <NavLink to="/workout-log">Workout Log</NavLink>
             </li>
           ) : null}
-          <li>
+          <li className="primary-menu-item">
             <NavLink to="/About">About Us</NavLink>
           </li>
           {props.isAuthenticated == false ? (
-            <li>
+            <li className="primary-menu-item">
               <NavLink to="/log-in">Login</NavLink>
             </li>
           ) : null}
           {props.isAuthenticated == false ? (
-            <li>
+            <li className="primary-menu-item">
               <NavLink to="/register">Register</NavLink>
             </li>
           ) : null}

@@ -46,7 +46,7 @@ const About = ({
   const sectionHeader = {
     title: <u>About Us</u>,
     paragraph:
-      "The team who made this website come to life with their other works and ability to get in contact with them.",
+      "The team who made this website come to life. See more of our work or get in contact with us below.",
   };
 
   return (

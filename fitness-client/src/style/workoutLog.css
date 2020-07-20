@@ -29,8 +29,9 @@ input {
   text-align: center;
 }
 .workout-log-header h1 {
-  font-family: "Yellowtail", cursive;
+  font-family: "Oswald", sans-serif;
   font-size: 60px;
+  font-weight: lighter;
 }
 .input-wrapper {
   align-items: center;
@@ -108,17 +109,23 @@ li {
   width: 70%;
 }
 .filter-button {
-  border: none;
-  border-left: 2px solid #3ca0e7;
-  border-radius: 25px;
-  border-right: 2px solid #3ca0e7;
-  box-shadow: inset 8px 8px 8px #0a0a12, inset -8px -8px 8px #1d1d29;
+  font-weight: 600;
+  color: white;
+
+  border-radius: 3px;
+  background: linear-gradient(145deg, #004b81, #003f6d);
+  box-shadow: inset -3px -3px 8px #001c30, inset 3px 3px 8px #0070c2;
+  width: 175px;
+  margin: 30px;
+
+  padding: 8px;
+  border: 1px solid grey;
+
+  letter-spacing: 1px;
+  transition: 0.2s;
   cursor: pointer;
-  margin: 25px;
-  outline: none;
-  padding: 15px;
-  transition: 0.5s;
 }
+
 .right-side-wrapper {
   background: #10131f;
   box-shadow: 13px 13px 20px #0a0a12, -13px -13px 20px #1d1d29;
