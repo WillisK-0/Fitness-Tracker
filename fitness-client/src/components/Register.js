@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink, Redirect } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { connect } from "react-redux";
+import "../style/register.css";
 
 function Register(props) {
   const [User, setUser] = useState([]);

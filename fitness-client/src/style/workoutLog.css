@@ -113,7 +113,6 @@ li {
   background-color: #101420;
 }
 .exercise-content-wrapper li {
-  border-bottom: 0.005px #3ca0e7 solid;
   padding: 5px 0px;
 }
 .exercise-items {
@@ -144,6 +143,7 @@ li {
   margin-left: auto;
   margin-right: 10%;
   margin-top: -605px;
+  margin-bottom: 320px;
   padding: 60px 35px 35px 35px;
   width: 40%;
 }
