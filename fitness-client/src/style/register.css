@@ -1,0 +1,66 @@
+.register-wrapper {
+  width: 540px;
+  height: 960px;
+  margin: 0 auto;
+  padding: 60px 35px 35px 35px;
+  border-radius: 40px;
+  background: #10131f;
+  box-shadow: 13px 13px 20px #0a0a12, -13px -13px 20px #1d1d29;
+  margin-bottom: 25px;
+}
+
+.register-title {
+  text-align: center;
+  background: none;
+  margin: 5px;
+}
+
+#register-container,
+.register-fields {
+  background: none;
+}
+
+#activity-selector {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  text-align: center;
+}
+.register-fields input {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 18px;
+  color: #555;
+  padding: 10px 5px 10px 5px;
+  margin: 9px;
+  background: none;
+  border-radius: 25px;
+  box-shadow: inset 8px 8px 8px #0a0a12, inset -8px -8px 8px #1d1d29;
+}
+
+.register-select {
+  background: none;
+  border-radius: 0.25em;
+  display: flex;
+  height: 2em;
+  line-height: 3;
+  margin: 10px auto;
+  overflow: hidden;
+  position: relative;
+  width: 80%;
+}
+/* Arrow */
+.register-select::after {
+  -o-transition: 0.25s all ease;
+  -webkit-transition: 0.25s all ease;
+  background: #34495e;
+  content: "\25BC";
+  cursor: pointer;
+  padding: 0 1em;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: -10px;
+  transition: 0.25s all ease;
+}
