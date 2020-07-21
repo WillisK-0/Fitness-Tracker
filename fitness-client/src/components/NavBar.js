@@ -11,7 +11,7 @@ function NavBar(props) {
       <nav role="navigation" className="primary-navigation">
         <ul className="primary-menu-items">
           <li className="primary-menu-item">
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/">Home </NavLink>
           </li>
 
           {props.isAuthenticated == true ? (

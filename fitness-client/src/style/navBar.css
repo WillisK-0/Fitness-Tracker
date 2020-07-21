@@ -72,6 +72,7 @@ ul primary-menu-items {
 
 .primary-navigation li a {
   color: white;
+  padding: 10px 40px 10px 40px;
 }
 
 .primary-navigation li a:hover {
