@@ -11,6 +11,7 @@
 
 .account-overview {
   font-weight: 600;
+  color: white;
 
   border-radius: 3px;
   background: linear-gradient(145deg, #004b81, #003f6d);
@@ -22,7 +23,7 @@
   border: 1px solid grey;
 
   letter-spacing: 1px;
-  transition: 0.05s;
+  transition: 0.2s;
   cursor: pointer;
 }
 
@@ -36,6 +37,7 @@
 
 .log-out-btn {
   font-weight: 600;
+  color: white;
 
   background: linear-gradient(145deg, #004b81, #003f6d);
   box-shadow: inset -3px -3px 8px #001c30, inset 3px 3px 8px #0070c2;
@@ -46,18 +48,19 @@
   border: 1px solid grey;
   border-radius: 3px;
   letter-spacing: 1px;
-  transition: 0.05s;
+  transition: 0.2s;
 }
 
 .update-profile {
   width: 175px;
   margin: 15px;
+  color: white;
 
   padding: 8px;
   border: 1px solid grey;
   border-radius: 3px;
   letter-spacing: 1px;
-  transition: 0.05s;
+  transition: 0.2s;
 
   font-weight: 600;
 
@@ -235,12 +238,9 @@ p {
   background-color: transparent;
 }
 
-p .foods-table {
-  /* margin-top: 5px; */
-  /* margin-bottom: px; */
-  float: left;
+.foods-table {
   background-color: transparent;
-  color: #666666;
+  color: #fffbfb;
   font-weight: 500;
 }
 
@@ -314,7 +314,7 @@ p .foods-table {
 }
 
 .welcome-line-sep {
-  margin: 50px;
+  margin: 50px auto;
   width: 90%;
 
   height: 2px;
@@ -334,8 +334,7 @@ html {
 .update-profile:hover,
 .log-out-btn:hover,
 .account-overview:hover {
-  background: linear-gradient(145deg, #003f6d, #014b80);
-  color: rgb(196, 196, 196);
+  border-color: lightblue;
 }
 
 @media only screen and (max-width: 950px) {

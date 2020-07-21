@@ -3,6 +3,7 @@ const initalState = {
   overview: {},
   dailyLimit: 0,
   recipeSearchList: [],
+  stationaryNumber: 0,
 };
 
 const reducer = (state = initalState, action) => {
@@ -27,10 +28,20 @@ const reducer = (state = initalState, action) => {
         ...state,
         dailyLimit: action.value,
       };
+    case "STATIONARY":
+      return {
+        ...state,
+        stationaryNumber: action.value,
+      };
     case "SUBCAL":
       return {
         ...state,
         dailyLimit: state.dailyLimit + action.value,
+      };
+    case "ADDCAL":
+      return {
+        ...state,
+        dailyLimit: state.dailyLimit - action.value,
       };
     case "SEARCH":
       return {
