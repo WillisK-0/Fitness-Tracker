@@ -26,7 +26,7 @@ function RecipeSearch(props) {
           <p>
             {" "}
             Feel free to search for a recipe! Users can save recipes to their
-            own profile page and add your own notes to your stored recipes!
+            own profile page to come back and view another time.
           </p>
         </h3>
         <div className="calorie-tracker-wrapper">

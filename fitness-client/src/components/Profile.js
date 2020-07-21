@@ -200,7 +200,7 @@ function Profile(props) {
   };
 
   const getUserInfo = () => {
-    fetch("http://localhost:3001/user-info/" + localStorage.getItem("userid"))
+    fetch("https://stormy-thicket-73183.herokuapp.com/user-info/" + localStorage.getItem("userid"))
       .then((response) => response.json())
       .then((result) => {
         setUserInfo(result);
@@ -208,7 +208,7 @@ function Profile(props) {
   };
 
   const getFoodItems = () => {
-    fetch("http://localhost:3001/food-items/" + localStorage.getItem("userid"))
+    fetch("https://stormy-thicket-73183.herokuapp.com/food-items/" + localStorage.getItem("userid"))
       .then((response) => response.json())
       .then((result) => {
         setFoodItems(result);
@@ -216,7 +216,7 @@ function Profile(props) {
   };
 
   const getRecipes = () => {
-    fetch("http://localhost:3001/recipes/" + localStorage.getItem("userid"))
+    fetch("https://stormy-thicket-73183.herokuapp.com/recipes/" + localStorage.getItem("userid"))
       .then((response) => response.json())
       .then((result) => {
         setRecipes(result);
@@ -230,9 +230,10 @@ function Profile(props) {
       getRecipes();
     } else if (userInfo.goal == "Maintain Weight") {
       props.dailyLimit(overview.bmr);
-    } else if (userInfo.goal == "Gain Weight") {
+    } else if (userInfo.goal == "gain weight") {
       props.dailyLimit(overview.bmr);
-    } else if (userInfo.goal == "Lose Weight") {
+      props.stationaryNumber(overview.bmr);
+    } else if (userInfo.goal == "lose weight") {
       props.dailyLimit(overview.mwl);
     } else {
       props.overview(overview);
@@ -244,7 +245,7 @@ function Profile(props) {
   };
 
   const handleAddFood = () => {
-    fetch("http://localhost:3001/add-food/" + localStorage.getItem("userid"), {
+    fetch("https://stormy-thicket-73183.herokuapp.com/add-food/" + localStorage.getItem("userid"), {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -261,7 +262,7 @@ function Profile(props) {
   };
 
   const handleRemoveFoodItem = (id) => {
-    fetch("http://localhost:3001/remove-food-item/" + id, {
+    fetch("https://stormy-thicket-73183.herokuapp.com/remove-food-item/" + id, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -278,7 +279,7 @@ function Profile(props) {
   };
 
   const handleRemoveDish = (recipeId) => {
-    fetch("http://localhost:3001/remove-recipe/" + recipeId, {
+    fetch("https://stormy-thicket-73183.herokuapp.com/remove-recipe/" + recipeId, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -301,6 +302,11 @@ function Profile(props) {
       props.subCal(calories);
     }
   };
+
+  const handleAddCal = (calories) => {
+    props.addCal(calories);
+  };
+
   const viewRecipe = (dish) => {
     fetch(
       `https://api.edamam.com/search?&app_id=4a5d81a2&app_key=379308ab9da9a8ee47f63563d2774ac4&from=0&to=9&q=${dish}`
@@ -319,7 +325,7 @@ function Profile(props) {
         <p className="welcoming-paragraph">
           Here we provide a profile overview using the information provided when
           you signed up with us. We will show you what is needed to be done to
-          reach your daily goals.<hr class="line-sep"></hr>
+          reach your daily goals.<hr class="welcome-line-sep"></hr>
         </p>
 
         <HashLink smooth to="#overview">
@@ -351,7 +357,8 @@ function Profile(props) {
             </h2>
           ) : (
             <h2 className="calorie-day-count">
-              You have anything over ({props.dailyLimitx})cals left for the day
+              You have anything over ({props.stationaryNumberx})cals left for
+              the day
             </h2>
           )}
           <p>Anything over your BMR can be used to gain weight</p>
@@ -381,17 +388,31 @@ function Profile(props) {
           </div>
           <hr className="line-sep"></hr>
           <div className="food-container">
-            <p className="foods-table">Foods Table</p>
-            <p
-              style={
-                props.dailyLimitx > 0
-                  ? { color: "rgb(26, 190, 26)" }
-                  : { color: "red" }
-              }
-              className="foods-table"
-            >
-              {props.dailyLimitx}
-            </p>
+            <p className="foods-table">Food Table</p>
+            {userInfo.goal == "lose weight" ||
+            userInfo.goal == "Maintain Weight" ? (
+              <p
+                style={
+                  props.dailyLimitx > 0
+                    ? { color: "rgb(26, 190, 26)" }
+                    : { color: "red" }
+                }
+                className="foods-table"
+              >
+                {props.dailyLimitx}
+              </p>
+            ) : (
+              <p
+                style={
+                  props.dailyLimitx > 0
+                    ? { color: "red" }
+                    : { color: "rgb(26, 190, 26)" }
+                }
+                className="foods-table"
+              >
+                {Math.abs(props.dailyLimitx)}
+              </p>
+            )}
             <input
               className="input-add-food"
               onChange={handleOnChange}
@@ -418,12 +439,22 @@ function Profile(props) {
                     <li className="food-li">
                       {foodItem.food}({foodItem.calories})cal
                       <div className="button-container">
-                        <button
-                          className="ate-button"
-                          onClick={() => handleSubCal(foodItem.calories)}
-                        >
-                          Eat
-                        </button>
+                        {userInfo.goal == "lose weight" ||
+                        userInfo.goal == "Maintain Weight" ? (
+                          <button
+                            className="ate-button"
+                            onClick={() => handleSubCal(foodItem.calories)}
+                          >
+                            Eat
+                          </button>
+                        ) : (
+                          <button
+                            className="ate-button"
+                            onClick={() => handleAddCal(foodItem.calories)}
+                          >
+                            Eat
+                          </button>
+                        )}
                         <button
                           onClick={() => handleRemoveFoodItem(foodItem.id)}
                         >
@@ -484,10 +515,12 @@ const mapDispatchToProps = (dispatch) => {
     isNotAuthenticated: () => dispatch({ type: "NOTAUTH", value: false }),
     overview: (overview) => dispatch({ type: "UPDOV", value: overview }),
     dailyLimit: (limit) => dispatch({ type: "LMT", value: limit }),
+    stationaryNumber: (limit) => dispatch({ type: "STATIONARY", value: limit }),
     subCal: (calories) => dispatch({ type: "SUBCAL", value: -calories }),
     handleSearchAction: (recipes) => {
       dispatch({ type: "SEARCH", recipeSearchList: recipes });
     },
+    addCal: (calories) => dispatch({ type: "ADDCAL", value: calories }),
   };
 };
 
@@ -495,6 +528,7 @@ const mapStateToProps = (state) => {
   return {
     overview: state.overview,
     dailyLimitx: state.dailyLimit,
+    stationaryNumberx: state.stationaryNumber,
   };
 };
 

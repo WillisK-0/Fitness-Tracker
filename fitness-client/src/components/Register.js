@@ -7,7 +7,7 @@ import "../style/register.css";
 function Register(props) {
   const [User, setUser] = useState([]);
   const handleCreateUser = () => {
-    fetch("http://localhost:3001/user-registration", {
+    fetch("https://stormy-thicket-73183.herokuapp.com/user-registration", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

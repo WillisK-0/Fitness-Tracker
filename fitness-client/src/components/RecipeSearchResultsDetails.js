@@ -13,7 +13,7 @@ function RecipeSearchResultsDetials(props) {
 
   const handleAddRecipe = (dish) => {
     fetch(
-      "http://localhost:3001/add-recipe/" + localStorage.getItem("userid"),
+      "https://stormy-thicket-73183.herokuapp.com/add-recipe/" + localStorage.getItem("userid"),
       {
         method: "POST",
         headers: {
@@ -35,7 +35,7 @@ function RecipeSearchResultsDetials(props) {
       <div className="content-wrapper">
         <h2>{recipe.recipe.label}</h2>
         <img src={recipe.recipe.image}></img>
-        <h4>Nutrition:</h4>
+        <h4>Nutrition</h4>
         <ul className="nutrients-items">
           <li className="nutrients-item">
             Calories: {parseInt(recipe.recipe.calories)}

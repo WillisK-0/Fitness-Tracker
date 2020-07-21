@@ -20,6 +20,9 @@ An app designed with health and fitness in mind. Capable of tracking a users cal
 
 ## Videos
 
+# ![Analyze-Fit-Demo-vid](https://user-images.githubusercontent.com/49554888/88095529-464eed80-cb63-11ea-9818-74542a140a12.gif)
+
+
 ## Getting-Started
 
 Feel free to fork it and tweak it to your likings. This is a basic quick build with many paths that are open to your exploration. Otherwise to try it out clone the repo to your local machine or download the zip.             

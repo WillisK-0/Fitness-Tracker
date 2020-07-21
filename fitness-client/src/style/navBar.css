@@ -8,6 +8,14 @@ ul primary-menu-items {
   background-color: rgb(22, 24, 25);
 }
 
+.primary-menu-item {
+  transition: 0.1s;
+}
+
+.primary-menu-item:hover {
+  background: #3ca0e7;
+}
+
 .header h1 {
   text-align: center;
   color: aliceblue;
@@ -53,8 +61,7 @@ ul primary-menu-items {
   margin: 16px;
   /* background-color: rgb(22, 24, 25)'; */
   background: #004679;
-  box-shadow: inset 7px 7px 15px #0070c2, 
-              inset -10px -5px 9px #001c30 ;
+  box-shadow: inset 7px 7px 15px #0070c2, inset -10px -5px 9px #001c30;
   display: inline-block;
   padding: 10px;
   position: relative;
@@ -63,20 +70,13 @@ ul primary-menu-items {
   font-family: sans-serif;
 }
 
-.primary-navigation:hover ul li {
-  background: #191826;
-}
-
-.primary-navigation:hover ul li {
-  background: #191826;
-}
-
 .primary-navigation li a {
   color: white;
+  padding: 10px 40px 10px 40px;
 }
 
 .primary-navigation li a:hover {
-  color: #3ca0e7;
+  color: #ffffff;
 }
 
 .primary-navigation li:hover {

@@ -20,7 +20,7 @@ function WorkoutLog() {
 
   const handleAddExercise = () => {
     fetch(
-      "http://localhost:3001/add-exercise/" + localStorage.getItem("userid"),
+      "https://stormy-thicket-73183.herokuapp.com/add-exercise/" + localStorage.getItem("userid"),
       {
         method: "POST",
         headers: {
@@ -39,7 +39,7 @@ function WorkoutLog() {
   };
   const getExerciseItems = () => {
     fetch(
-      "http://localhost:3001/exercise-items/" + localStorage.getItem("userid")
+      "https://stormy-thicket-73183.herokuapp.com/exercise-items/" + localStorage.getItem("userid")
     )
       .then((response) => response.json())
       .then((result) => {
@@ -49,7 +49,7 @@ function WorkoutLog() {
 
   const getDateItems = () => {
     fetch(
-      "http://localhost:3001/exercise-items-filter/" +
+      "https://stormy-thicket-73183.herokuapp.com/exercise-items-filter/" +
         localStorage.getItem("userid")
     )
       .then((res) => res.json())
