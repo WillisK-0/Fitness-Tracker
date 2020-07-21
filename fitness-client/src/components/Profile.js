@@ -200,7 +200,7 @@ function Profile(props) {
   };
 
   const getUserInfo = () => {
-    fetch("http://localhost:3001/user-info/" + localStorage.getItem("userid"))
+    fetch("https://stormy-thicket-73183.herokuapp.com/user-info/" + localStorage.getItem("userid"))
       .then((response) => response.json())
       .then((result) => {
         setUserInfo(result);
@@ -208,7 +208,7 @@ function Profile(props) {
   };
 
   const getFoodItems = () => {
-    fetch("http://localhost:3001/food-items/" + localStorage.getItem("userid"))
+    fetch("https://stormy-thicket-73183.herokuapp.com/food-items/" + localStorage.getItem("userid"))
       .then((response) => response.json())
       .then((result) => {
         setFoodItems(result);
@@ -216,7 +216,7 @@ function Profile(props) {
   };
 
   const getRecipes = () => {
-    fetch("http://localhost:3001/recipes/" + localStorage.getItem("userid"))
+    fetch("https://stormy-thicket-73183.herokuapp.com/recipes/" + localStorage.getItem("userid"))
       .then((response) => response.json())
       .then((result) => {
         setRecipes(result);
@@ -245,7 +245,7 @@ function Profile(props) {
   };
 
   const handleAddFood = () => {
-    fetch("http://localhost:3001/add-food/" + localStorage.getItem("userid"), {
+    fetch("https://stormy-thicket-73183.herokuapp.com/add-food/" + localStorage.getItem("userid"), {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -262,7 +262,7 @@ function Profile(props) {
   };
 
   const handleRemoveFoodItem = (id) => {
-    fetch("http://localhost:3001/remove-food-item/" + id, {
+    fetch("https://stormy-thicket-73183.herokuapp.com/remove-food-item/" + id, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -279,7 +279,7 @@ function Profile(props) {
   };
 
   const handleRemoveDish = (recipeId) => {
-    fetch("http://localhost:3001/remove-recipe/" + recipeId, {
+    fetch("https://stormy-thicket-73183.herokuapp.com/remove-recipe/" + recipeId, {
       method: "POST",
       headers: {
         "Content-type": "application/json",

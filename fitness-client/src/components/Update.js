@@ -7,7 +7,7 @@ function Update(props) {
   const [user, setUser] = useState([]);
   let currentId = localStorage.getItem("userid");
   //   useEffect(() => {
-  //     fetch("http://localhost:3001/user-info/" + localStorage.getItem("userid"))
+  //     fetch("https://stormy-thicket-73183.herokuapp.com/user-info/" + localStorage.getItem("userid"))
   //       .then((response) => response.json())
   //       .then((result) => {
   //         setUserInfo(result);
@@ -21,7 +21,7 @@ function Update(props) {
   };
 
   const handleUpdate = () => {
-    fetch("http://localhost:3001/update/" + currentId, {
+    fetch("https://stormy-thicket-73183.herokuapp.com/update/" + currentId, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
