@@ -242,6 +242,7 @@ p {
   background-color: transparent;
   color: #fffbfb;
   font-weight: 500;
+  font-size: x-large;
 }
 
 .ate-button {
@@ -366,7 +367,7 @@ html {
   }
   .calorie-day-count {
     width: 85%;
-    font-size: large;
+    font-size: small;
     border-radius: 10px;
     background: linear-gradient(145deg, #004b81, #003f6d);
   }
@@ -376,10 +377,34 @@ html {
   }
   .calorie-number {
     width: 30%;
-    font-size: medium;
+    font-size: small;
     text-align: center;
   }
   .food-container {
     width: 85%;
+  }
+  .food-li {
+    font-size: medium;
+  }
+  .calorie-container {
+    width: 90%;
+  }
+  .input-add-food {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 318px) and (max-width: 570px) {
+  .calorie-container {
+    width: 90%;
+  }
+  .any-over {
+    font-size: medium;
+  }
+  .input-add-food {
+    width: 100%;
+  }
+  .calorie-number {
+    font-size: small;
   }
 }

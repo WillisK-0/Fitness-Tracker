@@ -7,7 +7,7 @@ import "../style/register.css";
 function Register(props) {
   const [User, setUser] = useState([]);
   const handleCreateUser = () => {
-    fetch("http://localhost:3001/user-registration", {
+    fetch("https://stormy-thicket-73183.herokuapp.com/user-registration", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -127,7 +127,7 @@ function Register(props) {
                 id="goals-selector"
               >
                 <option value="">Goals</option>
-                <option value=""></option>
+                <option value="maintain weight">Maintain Weight</option>
                 <option value="gain weight">Gain Weight</option>
                 <option value="lose weight">Lose Weight</option>
               </select>

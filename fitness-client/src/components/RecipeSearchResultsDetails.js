@@ -13,7 +13,8 @@ function RecipeSearchResultsDetials(props) {
 
   const handleAddRecipe = (dish) => {
     fetch(
-      "http://localhost:3001/add-recipe/" + localStorage.getItem("userid"),
+      "https://stormy-thicket-73183.herokuapp.com/add-recipe/" +
+        localStorage.getItem("userid"),
       {
         method: "POST",
         headers: {

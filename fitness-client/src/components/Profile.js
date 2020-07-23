@@ -200,7 +200,10 @@ function Profile(props) {
   };
 
   const getUserInfo = () => {
-    fetch("http://localhost:3001/user-info/" + localStorage.getItem("userid"))
+    fetch(
+      "https://stormy-thicket-73183.herokuapp.com/user-info/" +
+        localStorage.getItem("userid")
+    )
       .then((response) => response.json())
       .then((result) => {
         setUserInfo(result);
@@ -208,7 +211,10 @@ function Profile(props) {
   };
 
   const getFoodItems = () => {
-    fetch("http://localhost:3001/food-items/" + localStorage.getItem("userid"))
+    fetch(
+      "https://stormy-thicket-73183.herokuapp.com/food-items/" +
+        localStorage.getItem("userid")
+    )
       .then((response) => response.json())
       .then((result) => {
         setFoodItems(result);
@@ -216,7 +222,10 @@ function Profile(props) {
   };
 
   const getRecipes = () => {
-    fetch("http://localhost:3001/recipes/" + localStorage.getItem("userid"))
+    fetch(
+      "https://stormy-thicket-73183.herokuapp.com/recipes/" +
+        localStorage.getItem("userid")
+    )
       .then((response) => response.json())
       .then((result) => {
         setRecipes(result);
@@ -228,7 +237,7 @@ function Profile(props) {
       getFoodItems();
       getUserInfo();
       getRecipes();
-    } else if (userInfo.goal == "Maintain Weight") {
+    } else if (userInfo.goal == "maintain weight") {
       props.dailyLimit(overview.bmr);
     } else if (userInfo.goal == "gain weight") {
       props.dailyLimit(overview.bmr);
@@ -245,13 +254,17 @@ function Profile(props) {
   };
 
   const handleAddFood = () => {
-    fetch("http://localhost:3001/add-food/" + localStorage.getItem("userid"), {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(addFood),
-    })
+    fetch(
+      "https://stormy-thicket-73183.herokuapp.com/add-food/" +
+        localStorage.getItem("userid"),
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(addFood),
+      }
+    )
       .then((response) => {
         return response.json();
       })
@@ -262,7 +275,7 @@ function Profile(props) {
   };
 
   const handleRemoveFoodItem = (id) => {
-    fetch("http://localhost:3001/remove-food-item/" + id, {
+    fetch("https://stormy-thicket-73183.herokuapp.com/remove-food-item/" + id, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -279,13 +292,16 @@ function Profile(props) {
   };
 
   const handleRemoveDish = (recipeId) => {
-    fetch("http://localhost:3001/remove-recipe/" + recipeId, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({ delete: "deleted" }),
-    })
+    fetch(
+      "https://stormy-thicket-73183.herokuapp.com/remove-recipe/" + recipeId,
+      {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({ delete: "deleted" }),
+      }
+    )
       .then((response) => {
         return response.json();
       })
@@ -361,7 +377,9 @@ function Profile(props) {
               the day
             </h2>
           )}
-          <p>Anything over your BMR can be used to gain weight</p>
+          <p className="any-over">
+            Anything over your BMR can be used to gain weight
+          </p>
           <div className="calorie-container">
             <p className="calorie-info">Basal Metabolic Rate (BMR)</p>
             <p className="calorie-number">{overview.bmr} Calories/day</p>

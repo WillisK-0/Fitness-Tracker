@@ -119,6 +119,9 @@ body h2 {
     margin-right: auto;
     margin-top: 50px;
   }
+  .recipeIntro {
+    width: 80%;
+  }
   #fitness-img {
     width: 100%;
     height: auto;

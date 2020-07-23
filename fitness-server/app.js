@@ -229,6 +229,6 @@ app.post("/remove-food-item/:id", (req, res) => {
   });
 });
 
-app.listen(3001, (req, res) => {
+app.listen(process.env.PORT || 3005, (req, res) => {
   console.log("Server is running...");
 });
