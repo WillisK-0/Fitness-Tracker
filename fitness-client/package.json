@@ -11,7 +11,7 @@
     "classnames": "^2.2.6",
     "neumorphic-ui": "^1.1.0",
     "next": "^9.4.4",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "nprogress": "^0.2.0",
     "react": "^16.13.1",
     "react-animated-progress-bar": "^1.0.4",
